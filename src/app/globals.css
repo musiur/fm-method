@@ -63,14 +63,10 @@
 @layer base {
   * {
     @apply border-border p-0 m-0 min-w-0;
+    font-family: "Montserrat Alternates", "Hind Siliguri", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-body {
-  font-family: "Hind Siliguri", "Montserrat Alternates", sans-serif;
 }
 
 .container {
@@ -82,8 +78,7 @@ body {
 }
 
 .heading-one {
-  font-size: clamp(40px, 1.5vw, 64px);
-  line-height: clamp(48px, 1.5vw, 76.8px);
+  font-size: clamp(1.5rem, 2.5vw, 4rem);
   font-weight: 700;
 }
 

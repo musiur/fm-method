@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Edtech for the future",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

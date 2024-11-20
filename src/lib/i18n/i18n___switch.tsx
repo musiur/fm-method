@@ -1,30 +1,28 @@
 "use client";
 import clsx from "clsx";
 import Link from "next/link";
-import { useSearchParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const I18N___Switch = () => {
-  const params = useSearchParams();
   const pathname = usePathname();
-  const _language = params.get("language") === "en" ? "bn" : "en";
+  const _language = pathname?.includes("/en") ? "en" : "bn";
 
   return (
     <div className="flex items-center justify-center">
       {languages.map((language) => {
         const { id, code, label } = language;
-
         const match = _language === code;
-        const newLink = pathname?.replace(/en|bn/, code);
-        console.log(match, newLink);
+        const newLink = pathname?.replace(/\/en|\/bn/, code);
+
         return (
           <Link key={id} href={newLink}>
             <div
-              className={clsx(
-                "border rounded-md h-9 w-9 flex items-center justify-center",
-                {
-                  "bg-primary text-white": match,
-                }
-              )}
+              className="border h-9 w-9 flex items-center justify-center"
+              style={{
+                opacity: match ? 1 : 0.5,
+                borderRadius:
+                  id === 1 ? "0.5rem 0 0 0.5rem" : "0 0.5rem 0.5rem 0",
+              }}
             >
               {label}
             </div>

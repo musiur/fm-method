@@ -6,9 +6,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-lg bg-white/80">
       <nav className="container py-2 flex items-center justify-between">
-        <div>
-          <ASSETS___BrandLogo className="w-20"/>
-        </div>
+      <ASSETS___BrandLogo className="w-20"/>
         <ul>
           <li>Home</li>
         </ul>

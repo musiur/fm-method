@@ -1,3 +1,4 @@
+import I18N___Switch from "@/lib/i18n/i18n___switch";
 import { Button } from "../ui/button";
 
 const Navbar = () => {
@@ -8,7 +9,8 @@ const Navbar = () => {
         <ul>
           <li>Menu</li>
         </ul>
-        <div>
+              <div>
+              <I18N___Switch />
           <Button>Login</Button>
         </div>
       </nav>

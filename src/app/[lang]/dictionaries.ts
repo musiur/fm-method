@@ -5,11 +5,12 @@ const dictionaries: Record<string, () => Promise<any>> = {
   bn: () => import("@/lib/i18n/bangla.json").then((module) => module.default),
 };
  
-export const getDictionary = async (locale: "en" | "bn") => {
+export const getDictionary = async (locale: string) => {
   const dictionaryFn = dictionaries[`${locale ? locale : "en"}`];
   try {
     return await dictionaryFn();
   } catch (error) {
+    console.error(error);
     throw new Error(
       `Error while loading dictionary for locale 'sw.js' not found!`
     );

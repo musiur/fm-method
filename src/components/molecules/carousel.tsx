@@ -61,9 +61,9 @@ const Carousel = ({ list, title, col = 4, darkbg = false }: CarouselProps) => {
                 clickable: true,
                 bulletClass: clsx('swiper-pagination-bullet', {
                     '!bg-gray-200': darkbg,
-                    '!bg-primary/60': !darkbg
+                    '!bg-primary': !darkbg
                 }),
-                bulletActiveClass: clsx('swiper-pagination-bullet-active !bg-white !w-6 !rounded-[6px]', {
+                bulletActiveClass: clsx('swiper-pagination-bullet-active !w-6 !rounded-[6px]', {
                     '!bg-white': darkbg,
                     '!bg-primary': !darkbg,
                 }),

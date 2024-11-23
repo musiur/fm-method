@@ -4,7 +4,7 @@ import ASSETS___BrandLogo from "@/lib/assets/assets___brandlogo/assets___brandlo
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-lg bg-white/80">
+    <header className="sticky top-0 z-50 backdrop-blur-lg bg-white/90">
       <nav className="container py-2 flex items-center justify-between">
       <ASSETS___BrandLogo className="w-20"/>
         <ul>

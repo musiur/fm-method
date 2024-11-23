@@ -1,15 +1,27 @@
 
 import { getDictionary } from "@/app/[lang]/dictionaries";
+import { Fragment } from "react";
+import HomeHero from "./_utils/home-hero";
+import HomeCourseList from "./_utils/home-course-list";
+import HomeAbout from "./_utils/home-about";
+import HomeOnlineCourses from "./_utils/home-online-courses";
+import HomeNewEnglishCourses from "./_utils/home-new-english-courses";
+import HomeTestimonials from "./_utils/home-testimonials";
+import HomeBannerSuccess from "./_utils/home-banner-success";
  
 const Page = async (props: any) => {
   const language = await props.params;
   const dictionary = await getDictionary(language.lang);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-3 md:p-24">
-      <h1 className="text-5xl font-extrabold text-blue-900 max-w-[800px] leading-[3.5rem] text-center">
-        {dictionary.home["hero-section"].heading}
-      </h1>
-    </main>
+    <Fragment>
+      <HomeHero />
+      <HomeCourseList />
+      <HomeAbout />
+      <HomeOnlineCourses />
+      <HomeNewEnglishCourses />
+      <HomeTestimonials />
+      <HomeBannerSuccess />
+    </Fragment>
   );
 }
 

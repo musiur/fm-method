@@ -6,6 +6,7 @@
 
 @layer base {
   :root {
+    --dark-brand: 201 100% 7%;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -83,6 +84,8 @@
   font-size: clamp(1.5rem, 2.5vw, 4rem);
   font-weight: 700;
 }
+
+
 
 /* font montserrat */
 .montserrat-alternates-thin {

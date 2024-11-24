@@ -12,22 +12,22 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const getBreakpoint = (maxSlidesPerView: number) => {
     const breakpoints = {
         1: {
-            320: { slidesPerView: 1 },
+            320: { slidesPerView: 1, spaceBetween: 5 },
         },
         2: {
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
+            320: { slidesPerView: 1, spaceBetween: 5 },
+            768: { slidesPerView: 2, spaceBetween: 5 },
         },
         3: {
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }
+            320: { slidesPerView: 1, spaceBetween: 5 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30}
         },
         4: {
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 },
+            320: { slidesPerView: 1, spaceBetween: 5 },
+            768: { slidesPerView: 2, spaceBetween: 10 },
+            1024: { slidesPerView: 3, spaceBetween: 10 },
+            1280: { slidesPerView: 4, spaceBetween: 20 },
         },
     }
     return breakpoints[maxSlidesPerView as keyof typeof breakpoints]
@@ -73,7 +73,7 @@ const Carousel = ({ list, title, col = 4, darkbg = false }: CarouselProps) => {
             className="relative"
         >
             {list.map((item, index) => (
-                <SwiperSlide key={index} className="pb-10">{item}</SwiperSlide>
+                <SwiperSlide key={index} className="pb-10 grid grid-cols-1">{item}</SwiperSlide>
             ))}
             <CarouselController className={`prev-${title}`} left={true} />
             <CarouselController className={`next-${title}`} left={false} />

@@ -3,9 +3,10 @@
 import { ReactElement } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, Grid } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/grid';
 import clsx from 'clsx';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -21,7 +22,7 @@ const getBreakpoint = (maxSlidesPerView: number) => {
         3: {
             320: { slidesPerView: 1, spaceBetween: 5 },
             768: { slidesPerView: 2, spaceBetween: 20 },
-            1024: { slidesPerView: 3, spaceBetween: 30}
+            1024: { slidesPerView: 3, spaceBetween: 30 }
         },
         4: {
             320: { slidesPerView: 1, spaceBetween: 5 },
@@ -38,14 +39,16 @@ interface CarouselProps {
     title: string;
     col?: 1 | 2 | 3 | 4;
     darkbg?: boolean;
+    grid?: boolean;
 }
 
-const Carousel = ({ list, title, col = 4, darkbg = false }: CarouselProps) => {
+const Carousel = ({ list, title, col = 4, darkbg = false, grid = false }: CarouselProps) => {
     const slidesPerView = getBreakpoint(col);
-    
+    const condiationalModules = grid ? [Navigation, Pagination, Autoplay, Grid] : [Navigation, Pagination, Autoplay];
+
     return (
         <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={condiationalModules}
             navigation={{
                 nextEl: `.next-${title}`,
                 prevEl: `.prev-${title}`,
@@ -55,6 +58,10 @@ const Carousel = ({ list, title, col = 4, darkbg = false }: CarouselProps) => {
                 delay: 3000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
+            }}
+            grid={{
+                rows: grid ? 2 : 1,
+                fill: 'row'
             }}
             spaceBetween={20}
             pagination={{
@@ -68,12 +75,17 @@ const Carousel = ({ list, title, col = 4, darkbg = false }: CarouselProps) => {
                     '!bg-primary': !darkbg,
                 }),
             }}
-            breakpoints={slidesPerView}
+            breakpoints={grid ? {
+                320: { slidesPerView: 1, spaceBetween: 5 },
+                768: { slidesPerView: 2, spaceBetween: 10 },
+                1024: { slidesPerView: 3, spaceBetween: 10 },
+                1280: { slidesPerView: 4, spaceBetween: 20 },
+            } : slidesPerView}
             id={`swiper-${title}-carousel`}
-            className="relative"
+            className="mySwiper relative"
         >
             {list.map((item, index) => (
-                <SwiperSlide key={index} className="pb-10 grid grid-cols-1">{item}</SwiperSlide>
+                <SwiperSlide key={index} className="pb-10">{item}</SwiperSlide>
             ))}
             <CarouselController className={`prev-${title}`} left={true} />
             <CarouselController className={`next-${title}`} left={false} />

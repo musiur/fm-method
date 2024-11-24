@@ -4,7 +4,7 @@ import { useState } from "react";
 import I18N___Switch from "@/lib/i18n/i18n___switch";
 import { Button } from "../../ui/button";
 import ASSETS___BrandLogo from "@/lib/assets/assets___brandlogo/assets___brandlogo";
-import CourseImage from "@/app/[lang]/_utils/assets/bank-jobs.png"
+import CourseImage from "@/app/_utils/assets/bank-jobs.png"
 import Image from "next/image";
 import clsx from "clsx";
 import { BookOpen, Clock, Menu } from "lucide-react";

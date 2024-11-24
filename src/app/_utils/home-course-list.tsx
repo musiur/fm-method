@@ -12,31 +12,31 @@ const getCourses = async () => {
     {
       id: 1,
       title: <><span className="text-green-600 font-bold">Basic</span> English</>,
-      link: "/courses/basic-english",
+      link: "/course-details/basic-english",
       image: BasicCourse
     },
     {
       id: 2,
       title: <><span className="text-yellow-600 font-bold">Intermediate</span> English</>,
-      link: "/courses/intermediate-english",
+      link: "/course-details/intermediate-english",
       image: IntermediateCourse
     },
     {
       id: 3,
       title: <><span className="text-blue-600 font-bold">Advanced</span> English</>,
-      link: "/courses/advanced-english",
+      link: "/course-details/advanced-english",
       image: AdvancedCourse
     },
     {
       id: 4,
       title: <><span className="text-red-600 font-bold">IELTS</span> Preparation</>,
-      link: "/courses/ielts-preparation",
+      link: "/course-details/ielts-preparation",
       image: IELTSCourse
     },
     {
       id: 5,
       title: <><span className="text-red-600 font-bold">IELTS</span> Preparation</>,
-      link: "/courses/ielts-preparation",
+      link: "/course-details/ielts-preparation",
       image: IELTSCourse
     },
   ];

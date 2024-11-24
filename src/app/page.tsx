@@ -1,5 +1,4 @@
 
-import { getDictionary } from "@/app/[lang]/dictionaries";
 import { Fragment } from "react";
 import HomeHero from "./_utils/home-hero";
 import HomeCourseList from "./_utils/home-course-list";
@@ -10,8 +9,6 @@ import HomeTestimonials from "./_utils/home-testimonials";
 import HomeBannerSuccess from "./_utils/home-banner-success";
  
 const Page = async (props: any) => {
-  const language = await props.params;
-  const dictionary = await getDictionary(language.lang);
   return (
     <Fragment>
       <HomeHero />

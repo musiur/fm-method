@@ -1,8 +1,4 @@
 import Carousel from "@/components/molecules/carousel";
-import BasicCourse from "./assets/basic-courses.jpeg";
-import IntermediateCourse from "./assets/intermediate-courses.jpeg";
-import AdvancedCourse from "./assets/advanced-courses.jpeg";
-import IELTSCourse from "./assets/ielts-courses.jpeg";
 import MedicalAdmissionCourse from "./assets/medical-admission.png";
 import PrimaryAssistantTeacherCourse from "./assets/primary-assistant-teacher.png";
 import BankJobsCourse from "./assets/bank-jobs.png";
@@ -17,35 +13,35 @@ const getCourses = async () => {
       id: 1,
       title: <>Professional Course</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/courses/basic-english",
+      link: "/course-details/basic-english",
       image: EnglishGovtJobsCourse
     },
     {
       id: 2,
       title: <>Marters Courses</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/courses/intermediate-english",
+      link: "/course-details/intermediate-english",
       image: PrimaryAssistantTeacherCourse
     },
     {
       id: 3,
       title: <>Other Courses</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/courses/advanced-english",
+      link: "/course-details/advanced-english",
       image: BankJobsCourse
     },
     {
       id: 4,
       title: <>Courses By</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/courses/ielts-preparation",
+      link: "/course-details/ielts-preparation",
       image: MedicalAdmissionCourse
     },
     {
       id: 5,
       title: <>Courses By</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/courses/ielts-preparation",
+      link: "/course-details/ielts-preparation",
       image: MedicalAdmissionCourse
     },
   ];

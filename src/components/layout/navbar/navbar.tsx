@@ -7,7 +7,7 @@ import ASSETS___BrandLogo from "@/lib/assets/assets___brandlogo/assets___brandlo
 import CourseImage from "@/app/[lang]/_utils/assets/bank-jobs.png"
 import Image from "next/image";
 import clsx from "clsx";
-import { BookOpen, Clock } from "lucide-react";
+import { BookOpen, Clock, Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -38,7 +38,6 @@ const Navbar = () => {
   ];
 
   const navLinks = [
-    { href: "/", label: "প্রথমপাতা" },
     { href: "/notice", label: "নোটিশ" },
     { href: "/batch", label: "আমাদের ব্যাচ" },
     { href: "/about", label: "আমরা" }
@@ -54,9 +53,7 @@ const Navbar = () => {
           className="lg:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+          <Menu className="w-6 h-6" />
         </button>
 
         {/* Desktop Menu */}
@@ -66,7 +63,7 @@ const Navbar = () => {
           'lg:flex lg:relative lg:bg-transparent lg:p-0'
         )}>
           <ul className="flex flex-col lg:flex-row gap-6">
-          <li
+            <li
               className="relative"
               onMouseEnter={() => setIsCoursesOpen(true)}
               onMouseLeave={() => setIsCoursesOpen(false)}
@@ -125,7 +122,7 @@ const Navbar = () => {
             </li>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link 
+                <Link
                   href={link.href}
                   className={clsx(
                     "hover:text-purple-600 transition-colors",
@@ -136,7 +133,7 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-            
+
           </ul>
 
           <div className="flex items-center gap-2">

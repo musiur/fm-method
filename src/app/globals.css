@@ -359,3 +359,12 @@
   transform: translateY(-10px);
   transition: opacity 200ms, transform 200ms;
 }
+
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

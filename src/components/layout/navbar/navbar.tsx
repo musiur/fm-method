@@ -7,7 +7,7 @@ import ASSETS___BrandLogo from "@/lib/assets/assets___brandlogo/assets___brandlo
 import CourseImage from "@/app/_utils/assets/bank-jobs.png"
 import Image from "next/image";
 import clsx from "clsx";
-import { BookOpen, Clock, Menu } from "lucide-react";
+import { BookOpen, Clock, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -53,7 +53,8 @@ const Navbar = () => {
           className="lg:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <Menu className="w-6 h-6" />
+          <Menu className={clsx("w-6 h-6", isMobileMenuOpen && "hidden")} />
+          <X className={clsx("w-6 h-6", !isMobileMenuOpen && "hidden")} />
         </button>
 
         {/* Desktop Menu */}

@@ -73,7 +73,7 @@ const Navbar = () => {
 
               {/* Mega Menu */}
               <div
-                className={clsx("fixed left-0 w-full bg-gray-100 shadow-lg border-t overflow-y-auto", {
+                className={clsx("fixed left-0 w-full overflow-y-auto pt-[24px]", {
                   "opacity-100": isCoursesOpen,
                   "opacity-0": !isCoursesOpen,
                   "pointer-events-auto": isCoursesOpen,
@@ -85,38 +85,40 @@ const Navbar = () => {
                 onMouseEnter={() => setIsCoursesOpen(true)}
                 onMouseLeave={() => setIsCoursesOpen(false)}
               >
-                <div className="container py-8">
-                  <h2 className="text-2xl font-bold mb-6">আমাদের কোর্সসমূহ</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {courseData.map((course, index) => (
-                      <div
-                        key={index}
-                        className="group cursor-pointer"
-                      >
-                        <div className="relative overflow-hidden rounded-lg">
-                          <Image
-                            src={course.image}
-                            alt={course.title}
-                            className="w-full h-48 object-cover transition-transform group-hover:scale-105"
-                          />
-                        </div>
-                        <div className="mt-3">
-                          <h3 className="font-semibold text-lg group-hover:text-purple-600">
-                            {course.title}
-                          </h3>
-                          <div className="flex items-center gap-4 text-sm text-gray-600 mt-2">
-                            <span className="flex items-center gap-1">
-                              <Clock className="w-4 h-4" />
-                              {course.duration}
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <BookOpen className="w-4 h-4" />
-                              {course.lessons}
-                            </span>
+                <div className="bg-white">
+                  <div className="container py-8">
+                    <h2 className="text-2xl font-bold mb-6">আমাদের কোর্সসমূহ</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                      {courseData.map((course, index) => (
+                        <div
+                          key={index}
+                          className="group cursor-pointer"
+                        >
+                          <div className="relative overflow-hidden rounded-lg">
+                            <Image
+                              src={course.image}
+                              alt={course.title}
+                              className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                            />
+                          </div>
+                          <div className="mt-3">
+                            <h3 className="font-semibold text-lg group-hover:text-purple-600">
+                              {course.title}
+                            </h3>
+                            <div className="flex items-center gap-4 text-sm text-gray-600 mt-2">
+                              <span className="flex items-center gap-1">
+                                <Clock className="w-4 h-4" />
+                                {course.duration}
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <BookOpen className="w-4 h-4" />
+                                {course.lessons}
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

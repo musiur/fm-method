@@ -6,6 +6,7 @@ import IeltsIcon from './assets/ielts-icon';
 import AdvancedIcon from './assets/advanced-icon';
 import { ReactElement } from 'react';
 import { ChevronRight } from 'lucide-react';
+import clsx from 'clsx';
 
 interface CourseCategory {
   id: number;
@@ -31,7 +32,7 @@ const HomeAbout = () => {
     {
       id: 3,
       title: 'IELTS',
-      icon: <IeltsIcon />,
+      icon: <IeltsIcon className="stroke-accent" />,
       link: '/courses/ielts'
     },
     {
@@ -84,17 +85,24 @@ const HomeAbout = () => {
                 <a
                   key={category.id}
                   href={category.link}
-                  className="border rounded-lg hover:shadow-lg transition-shadow group"
+                  className={
+                    clsx("border rounded-lg hover:shadow-lg transition-shadow group", {
+                      "border-accent/20 [&>*]:text-accent": category.id === 3,
+                    })
+                  }
                 >
                   <div className="flex flex-col items-center text-center">
                     <div className="mb-4 w-32 flex items-start justify-center">
                       {category.icon}
                     </div>
                     <div className="pb-4 -mt-6">
-                    <h4 className="text-xl font-semibold mb-2">{category.title}</h4>
-                    <span className="text-primary group-hover:translate-x-2 transition-transform inline-flex items-center gap-2">
-                      সব দেখুন <ChevronRight className="w-4 h-4" />
-                    </span>
+                      <h4 className="text-xl font-semibold mb-2">{category.title}</h4>
+                      <span className={clsx("group-hover:translate-x-2 transition-transform inline-flex items-center gap-2", {
+                        "text-accent": category.id === 3,
+                        "text-primary": category.id !== 3,
+                      })}>
+                        সব দেখুন <ChevronRight className="w-4 h-4" />
+                      </span>
                     </div>
                   </div>
                 </a>

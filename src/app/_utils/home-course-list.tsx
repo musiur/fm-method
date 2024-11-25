@@ -51,7 +51,7 @@ const HomeCourseList = async () => {
     return (
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
         <div className="relative">
-          <Image src={image} alt="course-image" width={500} height={500} className="object-cover object-top max-h-[300px]" />
+          <Image src={image} alt="course-image" width={1000} height={1000} className="object-cover object-top max-h-[300px]" quality={100}/>
           <div className="absolute top-0 left-0 w-full h-auto text-center pt-4">
             <h3 className="text-white text-xl md:text-2xl font-bold">{title}</h3>
           </div>

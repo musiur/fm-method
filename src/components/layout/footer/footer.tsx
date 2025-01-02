@@ -1,4 +1,4 @@
-import ASSETS___BrandLogo from "@/lib/assets/assets___brandlogo/assets___brandlogo";
+import AssetsBrandLogo from "@/lib/assets/assets-brand-logo";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 
 interface FooterLink {
@@ -34,7 +34,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Column 1 - Logo & Description */}
                     <div className="space-y-4">
-                        <ASSETS___BrandLogo />
+                        <AssetsBrandLogo />
                         <p className="text-gray-400">
                             ডাউনলোড করুন আমাদের মোবাইল অ্যাপস, যেখা শুরু করুন আজই থেকেই। ডাউনলোড করুন আমাদের মোবাইল অ্যাপস, যেখা শুরু করুন আজই থেকেই
                         </p>

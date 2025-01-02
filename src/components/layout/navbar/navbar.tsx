@@ -1,15 +1,15 @@
 "use client"
 
 import { useState } from "react";
-import I18N___Switch from "@/lib/i18n/i18n___switch";
 import { Button } from "../../ui/button";
-import ASSETS___BrandLogo from "@/lib/assets/assets___brandlogo/assets___brandlogo";
 import CourseImage from "@/app/_utils/assets/bank-jobs.png"
 import Image from "next/image";
 import clsx from "clsx";
 import { BookOpen, Clock, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import AssetsBrandLogo from "@/lib/assets/assets-brand-logo";
+import I18NSwitch from "@/lib/i18n/i18n-switch";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,7 +46,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-lg bg-white/90">
       <nav className="container py-2 flex items-center justify-between">
-        <ASSETS___BrandLogo className="w-20" />
+        <AssetsBrandLogo className="w-20" />
 
         {/* Mobile Menu Button */}
         <button
@@ -140,7 +140,7 @@ const Navbar = () => {
           </ul>
 
           <div className="flex items-center gap-2">
-            <I18N___Switch />
+            <I18NSwitch />
             <Button>লগ-ইন</Button>
           </div>
         </div>

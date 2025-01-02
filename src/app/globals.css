@@ -88,6 +88,13 @@
   line-height: clamp(2.5rem, 3vw, 5rem);
 }
 
+.heading-two {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 600;
+  line-height: clamp(2rem, 3vw, 3rem);
+}
+
+
 
 
 /* font montserrat */

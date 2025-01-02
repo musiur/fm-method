@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const I18N___Switch = () => {
+const I18NSwitch = () => {
   const pathname = usePathname();
   const _language = pathname?.includes("/en") ? "en" : "bn";
 
@@ -32,7 +32,7 @@ const I18N___Switch = () => {
   );
 };
 
-export default I18N___Switch;
+export default I18NSwitch;
 
 const languages = [
   {

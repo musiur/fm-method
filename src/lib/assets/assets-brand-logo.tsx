@@ -3,7 +3,7 @@ import Image from "next/image";
 import BrandLogo from "./brandlogo.png";
 import Link from "next/link";
 
-const ASSETS___BrandLogo = ({ className }: { className?: string }) => {
+const AssetsBrandLogo = ({ className }: { className?: string }) => {
   return (
     <Link href="/">
       <Image
@@ -17,4 +17,4 @@ const ASSETS___BrandLogo = ({ className }: { className?: string }) => {
   );
 };
 
-export default ASSETS___BrandLogo;
+export default AssetsBrandLogo;

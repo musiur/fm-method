@@ -10,13 +10,13 @@ import Link from "next/link";
 const Slides = [
   {
     image: SlideImage,
-    title: "রেজিস্ট্রেশন করুন",
-    description: "রেজিস্ট্রেশন করুন এই পেজে রেজিস্ট্রেশন করুন।",
+    title: "লগ-ইন করুন",
+    description: "লগ-ইন করুন এই পেজে লগ-ইন করুন।",
   },
   {
     image: SlideImage,
-    title: "রেজিস্ট্রেশন করুন 1",
-    description: "রেজিস্ট্রেশন করুন এই পেজে রেজিস্ট্রেশন করুন।",
+    title: "লগ-ইন করুন 1",
+    description: "লগ-ইন করুন এই পেজে লগ-ইন করুন।",
   },
 ];
 
@@ -24,17 +24,6 @@ const FormXStructure: FormX__TYPE_Structure = {
   fields: [
     {
       id: 1,
-      type: "text",
-      name: "username",
-      label: "সম্পূর্ণ নাম",
-      placeholder: "মোহাম্মাহ আবদুল্লাহ আল বাকী",
-      validation: z.string().min(2, {
-        message: "সম্পূর্ণ নাম লিখুন।",
-      }),
-      defaultValue: ""
-    },
-    {
-      id: 2,
       type: "text",
       name: "email",
       label: "ইমেইল এড্রেস",
@@ -45,18 +34,7 @@ const FormXStructure: FormX__TYPE_Structure = {
       defaultValue: ""
     },
     {
-      id: 3,
-      type: "text",
-      name: "phone",
-      label: "ফোন নম্বর",
-      placeholder: "01712345678",
-      validation: z.string().min(11, {
-        message: "ফোন নম্বর লিখুন।",
-      }),
-      defaultValue: ""
-    },
-    {
-      id: 4,
+      id: 2,
       type: "password",
       name: "password",
       label: "পাসওয়ার্ড",
@@ -72,29 +50,37 @@ const FormXStructure: FormX__TYPE_Structure = {
     submitHandler: (data) => {
       console.log(data);
     },
-    buttonText: "রেজিস্টার",
+    buttonText: "লগ-ইন",
     buttonClassName: "w-full",
   },
 };
 
-const RegisterForm = () => {
+const LoginForm = () => {
   return (
     <div className="container section flex flex-col md:flex-row items-center justify-between gap-10">
       <div className="max-w-[500px] w-full space-y-8">
         <div>
-          <h3 className="text-2xl font-bold">রেজিস্ট্রেশন করুন</h3>
+          <h3 className="text-2xl font-bold">লগ-ইন করুন</h3>
           <p className="text-sm text-gray-500">
-            ফর্মটি পূরণ করুন রেজিস্ট্রেশন করতে
+            ফর্মটি পূরণ করুন লগ-ইন করতে
           </p>
         </div>
         <FormX structure={FormXStructure} />
         <hr />
         <div className="flex items-center gap-2">
           <p className="text-sm text-gray-500">
-            অলরেডি একাউন্ট আছে?
+            পাসওয়ার্ড ভুলে গেছেন?
           </p>
-          <Link href="/login" className="text-sm text-blue-500">
-            লগ-ইন করুন
+          <Link href="/forget-password" className="text-sm text-blue-500">
+            পাসওয়ার্ড পরিবর্তন করুন
+          </Link>
+        </div>
+        <div className="flex items-center gap-2">
+          <p className="text-sm text-gray-500">
+            রেজিস্ট্রেশন করা হয়নি?
+          </p>
+          <Link href="/register" className="text-sm text-blue-500">
+            রেজিস্ট্রেশন করুন
           </Link>
         </div>
       </div>
@@ -103,7 +89,7 @@ const RegisterForm = () => {
           list={Slides.map((slide) => (
             <Slide key={slide.title} {...slide} />
           ))}
-          title="রেজিস্ট্রেশন করুন"
+          title="লগ-ইন করুন"
           col={1}
         />
       </div>
@@ -111,4 +97,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default LoginForm;

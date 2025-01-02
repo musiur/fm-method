@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { Button } from "../../ui/button";
-import CourseImage from "@/app/_utils/assets/bank-jobs.png"
+import CourseImage from "@/app/_utils/assets/bank-jobs.png";
 import Image from "next/image";
 import clsx from "clsx";
 import { BookOpen, Clock, Menu, X } from "lucide-react";
@@ -21,26 +21,26 @@ const Navbar = () => {
       title: "ওয়েব ডেভেলপমেন্ট",
       duration: "৬ মাস",
       lessons: "১২০টি লেসন",
-      image: CourseImage
+      image: CourseImage,
     },
     {
       title: "ডিজিটাল মার্কেটিং",
       duration: "৯ মাস",
       lessons: "৯০টি লেসন",
-      image: CourseImage
+      image: CourseImage,
     },
     {
       title: "গ্রাফিক্স ডিজাইন",
       duration: "৫ মাস",
       lessons: "১০০টি লেসন",
-      image: CourseImage
+      image: CourseImage,
     },
   ];
 
   const navLinks = [
     { href: "/notice", label: "নোটিশ" },
     { href: "/batch", label: "আমাদের ব্যাচ" },
-    { href: "/about", label: "আমরা" }
+    { href: "/about", label: "আমরা" },
   ];
 
   return (
@@ -58,42 +58,50 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Menu */}
-        <div className={clsx(
-          'items-center gap-8',
-          isMobileMenuOpen ? 'absolute top-full left-0 right-0 bg-white p-4' : 'hidden',
-          'lg:flex lg:relative lg:bg-transparent lg:p-0'
-        )}>
+        <div
+          className={clsx(
+            "items-center gap-8",
+            isMobileMenuOpen
+              ? "absolute top-full left-0 right-0 bg-white p-4"
+              : "hidden",
+            "lg:flex lg:relative lg:bg-transparent lg:p-0"
+          )}
+        >
           <ul className="flex flex-col lg:flex-row gap-6">
             <li
               className="relative"
               onMouseEnter={() => setIsCoursesOpen(true)}
               onMouseLeave={() => setIsCoursesOpen(false)}
             >
-              <span className="hover:text-purple-600 cursor-pointer">কোর্স ▾</span>
+              <span className="hover:text-purple-600 cursor-pointer">
+                কোর্স ▾
+              </span>
 
               {/* Mega Menu */}
               <div
-                className={clsx("fixed left-0 w-full overflow-y-auto pt-[24px]", {
-                  "opacity-100": isCoursesOpen,
-                  "opacity-0": !isCoursesOpen,
-                  "pointer-events-auto": isCoursesOpen,
-                  "pointer-events-none": !isCoursesOpen,
-                  "z-50": isCoursesOpen,
-                  "z-0": !isCoursesOpen,
-                  "max-h-[60vh] lg:max-h-[80vh]": isCoursesOpen,
-                })}
+                className={clsx(
+                  "fixed left-0 w-full overflow-y-auto pt-[24px]",
+                  {
+                    "opacity-100": isCoursesOpen,
+                    "opacity-0": !isCoursesOpen,
+                    "pointer-events-auto": isCoursesOpen,
+                    "pointer-events-none": !isCoursesOpen,
+                    "z-50": isCoursesOpen,
+                    "z-0": !isCoursesOpen,
+                    "max-h-[60vh] lg:max-h-[80vh]": isCoursesOpen,
+                  }
+                )}
                 onMouseEnter={() => setIsCoursesOpen(true)}
                 onMouseLeave={() => setIsCoursesOpen(false)}
               >
                 <div className="bg-white">
                   <div className="container py-8">
-                    <h2 className="text-2xl font-bold mb-6">আমাদের কোর্সসমূহ</h2>
+                    <h2 className="text-2xl font-bold mb-6">
+                      আমাদের কোর্সসমূহ
+                    </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                       {courseData.map((course, index) => (
-                        <div
-                          key={index}
-                          className="group cursor-pointer"
-                        >
+                        <div key={index} className="group cursor-pointer">
                           <div className="relative overflow-hidden rounded-lg">
                             <Image
                               src={course.image}
@@ -136,12 +144,13 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-
           </ul>
 
           <div className="flex items-center gap-2">
             <I18NSwitch />
-            <Button>লগ-ইন</Button>
+            <Link href="/login">
+              <Button>লগ-ইন</Button>
+            </Link>
           </div>
         </div>
       </nav>

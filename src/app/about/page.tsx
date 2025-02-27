@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import FMSirTwo from "./assets/fm-sir-two.png";
-import BasicIcon from './assets/basic-icon';
-import IntermediateIcon from './assets/intermediate-icon';
-import IeltsIcon from './assets/ielts-icon';
-import AdvancedIcon from './assets/advanced-icon';
-import clsx from 'clsx';
 import { ReactElement } from 'react';
 import { ChevronRight } from 'lucide-react';
+import clsx from 'clsx';
+import BasicIcon from '../_utils/assets/basic-icon';
+import IntermediateIcon from '../_utils/assets/intermediate-icon';
+import IeltsIcon from '../_utils/assets/ielts-icon';
+import AdvancedIcon from '../_utils/assets/advanced-icon';
 
 interface CourseCategory {
   id: number;
@@ -19,25 +18,25 @@ const HomeAbout = () => {
   const courseCategories: CourseCategory[] = [
     {
       id: 1,
-      title: 'Basic',
+      title: 'About FM Sir',
       icon: <BasicIcon />,
       link: '/courses/basic'
     },
     {
       id: 2,
-      title: 'Intermediate',
+      title: 'Publications',
       icon: <IntermediateIcon />,
       link: '/courses/intermediate'
     },
     {
       id: 3,
-      title: 'IELTS',
+      title: 'What is FM Method?',
       icon: <IeltsIcon className="stroke-accent" />,
       link: '/courses/ielts'
     },
     {
       id: 4,
-      title: 'Advance',
+      title: 'Gallery',
       icon: <AdvancedIcon />,
       link: '/courses/advance'
     }
@@ -49,15 +48,12 @@ const HomeAbout = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-center">
           <div className="relative my-auto">
             <Image
-              src={FMSirTwo}
+              src="https://exwj7ki8kn.ufs.sh/f/xXgziAMpCDIlwhrxNNFmELrtu6eIWlRk4YbSNC9MK7X5sDjA"
               alt="Instructor"
               width={500}
               height={600}
               className="rounded-lg scale-x-[-1]"
             />
-            <div className="absolute bottom-4 left-4 bg-[#4338CA] text-white px-6 py-3 rounded-lg">
-              <h3 className="text-2xl font-bold">25+ Experience</h3>
-            </div>
           </div>
 
           <div className="my-auto">
@@ -68,18 +64,13 @@ const HomeAbout = () => {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">আমাদের সম্পর্কে</h2>
             <p className="text-gray-600 mb-8">
-              &quot;একজন সিনিয়র প্রাকটিশনী হিসাবে আমি বিশেষভাবে FM Method-এর সিস্টেম
-              ডিজাইন বিষয়বস্তু এবং পদ্ধতি ক্লাস পরিচালনা করেছি এবং আমি আন্তরিক
-              ধন্যবাদ পরিবর্তে তাঁর ব্যবসায়ীদের দিকে আরও বেশি সেবাইট বা প্রতিষ্ঠানের
-              মাধ্যম-নামের পরিবেশে কাজ করতে সক্ষমতা করে। সিস্টেম ডিজাইনের দক্ষতা
-              অর্জনের জন্য আমি FM Method কোর্সটি সুপারিশ করব।&quot;
+              এফএম মেথড হলো বাংলা ভাষাভাষী মানুষদের ইংরেজি শেখানোর একটি বৈজ্ঞানিক পদ্ধতি। এটি ইংরেজি শেখার একটি অনন্য এবং কার্যকর উপায়।
             </p>
             <button className="bg-[#4338CA] text-white px-8 py-3 rounded-lg hover:bg-[#3730A3] transition-colors">
               আরো জানুন
             </button>
           </div>
           <div className="my-auto">
-            <h3 className="text-2xl font-bold mb-8">কোর্স বিভাগ</h3>
             <div className="grid grid-cols-2 gap-6">
               {courseCategories.map((category) => (
                 <a

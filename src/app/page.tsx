@@ -8,7 +8,7 @@ import HomeNewEnglishCourses from "./_utils/home-new-english-courses";
 import HomeTestimonials from "./_utils/home-testimonials";
 import HomeBannerSuccess from "./_utils/home-banner-success";
  
-const Page = async (props: any) => {
+const Page = () => {
   return (
     <Fragment>
       <HomeHero />

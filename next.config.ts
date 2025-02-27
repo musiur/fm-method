@@ -6,6 +6,13 @@ const nextConfig: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'exwj7ki8kn.ufs.sh',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

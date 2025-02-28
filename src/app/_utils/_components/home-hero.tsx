@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import HomeRegistrationForm from "./home-registration-form";
 import Link from "next/link";
-import FM_SIR_IMAGE from "./assets/fm-sir-one.png"
+import FM_SIR_IMAGE from "../_assets/fm-sir-one.png"
 import Image from "next/image";
 
 const HomeHero = () => {

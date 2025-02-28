@@ -1,8 +1,8 @@
 import Carousel from "@/components/molecules/carousel";
-import MedicalAdmissionCourse from "./assets/medical-admission.png";
-import PrimaryAssistantTeacherCourse from "./assets/primary-assistant-teacher.png";
-import BankJobsCourse from "./assets/bank-jobs.png";
-import EnglishGovtJobsCourse from "./assets/english-govt-jobs.png";
+import MedicalAdmissionCourse from "../_assets/medical-admission.png";
+import PrimaryAssistantTeacherCourse from "../_assets/primary-assistant-teacher.png";
+import BankJobsCourse from "../_assets/bank-jobs.png";
+import EnglishGovtJobsCourse from "../_assets/english-govt-jobs.png";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -13,35 +13,35 @@ const getCourses = async () => {
       id: 1,
       title: <>Professional Course</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/course-details/basic-english",
+      link: "/courses/basic-english",
       image: EnglishGovtJobsCourse
     },
     {
       id: 2,
       title: <>Marters Courses</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/course-details/intermediate-english",
+      link: "/courses/intermediate-english",
       image: PrimaryAssistantTeacherCourse
     },
     {
       id: 3,
       title: <>Other Courses</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/course-details/advanced-english",
+      link: "/courses/advanced-english",
       image: BankJobsCourse
     },
     {
       id: 4,
       title: <>Courses By</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/course-details/ielts-preparation",
+      link: "/courses/ielts-preparation",
       image: MedicalAdmissionCourse
     },
     {
       id: 5,
       title: <>Courses By</>,
       teacher: "Md. Suman Bhuiyan+",
-      link: "/course-details/ielts-preparation",
+      link: "/courses/ielts-preparation",
       image: MedicalAdmissionCourse
     },
   ];
@@ -51,10 +51,10 @@ const getCourses = async () => {
 const HomeNewEnglishCourses = async () => {
   const courseData = await getCourses();
 
-  const list = courseData.map((course) => {
+  const list = courseData.map((course, index) => {
     const { title, link, image, teacher } = course;
     return (
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden">
         <div className="relative">
           <Image src={image} alt="course-image" width={500} height={500} className="object-cover object-top max-h-[240px]" />
         </div>

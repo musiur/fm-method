@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import FMSirTwo from "./assets/fm-sir-two.png";
-import BasicIcon from './assets/basic-icon';
-import IntermediateIcon from './assets/intermediate-icon';
-import IeltsIcon from './assets/ielts-icon';
-import AdvancedIcon from './assets/advanced-icon';
+import FMSirTwo from "../_assets/fm-sir-two.png";
+import BasicIcon from '../_assets/basic-icon';
+import IntermediateIcon from '../_assets/intermediate-icon';
+import IeltsIcon from '../_assets/ielts-icon';
+import AdvancedIcon from '../_assets/advanced-icon';
 import clsx from 'clsx';
 import { ReactElement } from 'react';
 import { ChevronRight } from 'lucide-react';

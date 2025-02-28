@@ -1,8 +1,7 @@
-import Carousel from "@/components/molecules/carousel";
-import MedicalAdmissionCourse from "./assets/medical-admission.png";
-import PrimaryAssistantTeacherCourse from "./assets/primary-assistant-teacher.png";
-import BankJobsCourse from "./assets/bank-jobs.png";
-import EnglishGovtJobsCourse from "./assets/english-govt-jobs.png";
+import MedicalAdmissionCourse from "../_assets/medical-admission.png";
+import PrimaryAssistantTeacherCourse from "../_assets/primary-assistant-teacher.png";
+import BankJobsCourse from "../_assets/bank-jobs.png";
+import EnglishGovtJobsCourse from "../_assets/english-govt-jobs.png";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -29,7 +28,7 @@ const getCourses = async () => {
       id: 1,
       title: <>Medical Admission Course</>,
       shortDescription: "Complete preparation for medical college admission test",
-      link: "/course-details/medical-admission",
+      link: "/courses/medical-admission",
       image: MedicalAdmissionCourse,
       rating: 4.8,
       price: 2500,
@@ -38,7 +37,7 @@ const getCourses = async () => {
       id: 2,
       title: <>Primary Assistant Teacher Preparation</>,
       shortDescription: "Comprehensive guide for primary teacher recruitment",
-      link: "/course-details/primary-teacher",
+      link: "/courses/primary-teacher",
       image: PrimaryAssistantTeacherCourse,
       rating: 4.6,
       price: 1800,
@@ -47,7 +46,7 @@ const getCourses = async () => {
       id: 3,
       title: <>Bank Job Preparation</>,
       shortDescription: "Complete guide for bank job examinations",
-      link: "/course-details/bank-jobs",
+      link: "/courses/bank-jobs",
       image: BankJobsCourse,
       rating: 4.7,
       price: 2000,
@@ -56,7 +55,7 @@ const getCourses = async () => {
       id: 4,
       title: <>English for Government Jobs</>,
       shortDescription: "Master English for all government job exams",
-      link: "/course-details/govt-english",
+      link: "/courses/govt-english",
       image: EnglishGovtJobsCourse,
       rating: 4.5,
       price: 1500,
@@ -65,7 +64,7 @@ const getCourses = async () => {
       id: 5,
       title: <>Advanced English Grammar</>,
       shortDescription: "Perfect your English grammar skills",
-      link: "/course-details/advanced-grammar",
+      link: "/courses/advanced-grammar",
       image: EnglishGovtJobsCourse,
       rating: 4.9,
       price: 1600,
@@ -74,7 +73,7 @@ const getCourses = async () => {
       id: 6,
       title: <>BCS Special Course</>,
       shortDescription: "Specialized preparation for BCS examination",
-      link: "/course-details/bcs-special",
+      link: "/courses/bcs-special",
       image: BankJobsCourse,
       rating: 4.4,
       price: 2800,
@@ -83,7 +82,7 @@ const getCourses = async () => {
       id: 7,
       title: <>IELTS Preparation</>,
       shortDescription: "Achieve your target IELTS band score",
-      link: "/course-details/ielts-prep",
+      link: "/courses/ielts-prep",
       image: EnglishGovtJobsCourse,
       rating: 4.7,
       price: 2200,
@@ -92,7 +91,7 @@ const getCourses = async () => {
       id: 8,
       title: <>Spoken English Mastery</>,
       shortDescription: "Become fluent in spoken English",
-      link: "/course-details/spoken-english",
+      link: "/courses/spoken-english",
       image: EnglishGovtJobsCourse,
       rating: 4.3,
       price: 1400,

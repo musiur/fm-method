@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "../../ui/button";
-import CourseImage from "@/app/_utils/assets/bank-jobs.png";
+import CourseImage from "@/app/_utils/_assets/bank-jobs.png";
 import Image from "next/image";
 import clsx from "clsx";
 import { BookOpen, Clock, Menu, X } from "lucide-react";

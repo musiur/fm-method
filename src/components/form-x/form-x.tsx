@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -7,17 +8,15 @@ import { z } from "zod"
 import {
   Form,
 } from "@/components/ui/form"
-import { toast } from "sonner"
 import SubmitX from "./submit-x"
 import InputX, { InputX___Type_InputTypes } from "./input-x"
 import CheckboxX from "./checkbox-x"
-import ImageUploadX from "./image-upload-x"
 import React, { Fragment } from "react"
 import { cn } from "@/lib/utils"
 
 export type FormX__TYPE_Field = {
   id: number;
-  type: InputX___Type_InputTypes | "checkbox" | "image" | "group";
+  type: InputX___Type_InputTypes | "checkbox" | "group";
   name: string;
   label?: string;
   placeholder?: string;
@@ -100,13 +99,6 @@ export function FormX({ structure = FormXStructure_DEMO, className = "" }: { str
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     structure?.submission?.submitHandler(data);
-    structure?.submission?.toast && toast.success("Form submitted successfully!", {
-      description: (
-        <pre className="mt-2 w-[280px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
   }
 
   // React.useEffect(() => {
@@ -126,7 +118,7 @@ export function FormX({ structure = FormXStructure_DEMO, className = "" }: { str
 
 function renderFields(fields: FormX__TYPE_Field[], form: any, parentName?: string) {
   return fields.map((fieldDetails) => {
-    const { id, name, label, placeholder, description, type, multiple, fields: nestedFields } = fieldDetails;
+    const { id, name, label, placeholder, description, type, fields: nestedFields } = fieldDetails;
     const fullName = parentName ? `${parentName}.${name}` : name;
 
     return (
@@ -151,18 +143,9 @@ function renderFields(fields: FormX__TYPE_Field[], form: any, parentName?: strin
             />
           ) : type === "checkbox" ? (
             <CheckboxX
-              form={form}
               name={fullName}
               label={label}
               description={description}
-            />
-          ) : type === "image" ? (
-            <ImageUploadX
-              form={form}
-              name={fullName}
-              label={label}
-              description={description}
-              multiple={multiple}
             />
           ) : null
         )}

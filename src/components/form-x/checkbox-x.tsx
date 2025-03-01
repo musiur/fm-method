@@ -2,7 +2,7 @@ import { Checkbox } from "@radix-ui/react-checkbox";
 
 import { FormControl, FormLabel } from "../ui/form";
 
-import { UseFormReturn } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { FormItem } from "../ui/form";
 
 import { FormField } from "../ui/form";
@@ -10,16 +10,15 @@ import { Check } from "lucide-react";
 import clsx from "clsx";
 
 const CheckboxX = ({
-  form,
   name,
   label = "Check this box",
 }:
   {
-    form: UseFormReturn<any>;
     name: string;
     label?: string;
     description?: string
   }) => {
+  const form = useFormContext();
   return (
     <FormField
       control={form.control}

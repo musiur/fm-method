@@ -1,19 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-/**
- * @author: github.com/musiur
- * date: 29 May, 2024
- *
- * @description Unified & reusable INPUT component
- *
- * @params form, name, type, label, placeholder
- * form: react-hook-form
- * name: input name
- * type: input types
- * placeholder: input placeholder
- */
-
 "use client";
 import { useState } from "react";
 import {

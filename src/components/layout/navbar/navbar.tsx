@@ -41,6 +41,10 @@ const Navbar = () => {
     { href: "/notice", label: "নোটিশ" },
     { href: "/batch", label: "আমাদের ব্যাচ" },
     { href: "/about", label: "আমরা" },
+    { href: "/contact", label: "যোগাযোগ" },
+    { href: "/gallery", label: "গ্যালারী" },
+    { href: "/events", label: "ইভেন্ট" },
+    { href: "/blogs", label: "ব্লগ" },
   ];
 
   return (

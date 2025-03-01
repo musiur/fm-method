@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 
 import {
   Breadcrumb,
@@ -10,6 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { usePathname } from "next/navigation";
+import { Fragment } from "react";
 
 const CustomBreadcrumb = () => {
   const pathname = usePathname();
@@ -21,19 +21,21 @@ const CustomBreadcrumb = () => {
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />
+
         {breadcrumbs?.map((crumb, index) => {
           const href = "/" + breadcrumbs.slice(0, index + 1).join("/");
           const isLast = index === breadcrumbs.length - 1;
           return (
-            <BreadcrumbItem key={index} className="capitalize">
-              {isLast ? (
-                <BreadcrumbPage>{crumb}</BreadcrumbPage>
-              ) : (
-                <BreadcrumbLink href={href}>{crumb}</BreadcrumbLink>
-              )}
-              {isLast ? null : <BreadcrumbSeparator />}
-            </BreadcrumbItem>
+            <Fragment key={index}>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem className="capitalize">
+                {isLast ? (
+                  <BreadcrumbPage>{crumb}</BreadcrumbPage>
+                ) : (
+                  <BreadcrumbLink href={href}>{crumb}</BreadcrumbLink>
+                )}
+              </BreadcrumbItem>
+            </Fragment>
           );
         })}
       </BreadcrumbList>

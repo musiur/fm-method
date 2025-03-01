@@ -10,7 +10,7 @@ const PageHeader = ({
   description?: string;
 }) => {
   return (
-    <div className="relative bg-white/0">
+    <div className="relative bg-white/0 border-b">
       <Image
         src={BackgroundImage}
         alt="Page Header"

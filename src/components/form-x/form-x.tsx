@@ -101,11 +101,6 @@ export function FormX({ structure = FormXStructure_DEMO, className = "" }: { str
     structure?.submission?.submitHandler(data);
   }
 
-  // React.useEffect(() => {
-  //   console.log("Form errors:", form.formState.errors);
-  //   console.log("Form values:", form.getValues());
-  // }, [form.formState]);
-
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className={cn(className, "w-full space-y-6")}>
@@ -134,7 +129,6 @@ function renderFields(fields: FormX__TYPE_Field[], form: any, parentName?: strin
         ) : (
           ["text", "password", "textarea", "select", "date", "number"].includes(type) ? (
             <InputX
-              form={form}
               name={fullName}
               label={label}
               placeholder={placeholder}

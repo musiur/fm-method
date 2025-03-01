@@ -38,8 +38,6 @@ const Navbar = () => {
   ];
 
   const navLinks = [
-    { href: "/notice", label: "নোটিশ" },
-    { href: "/batch", label: "আমাদের ব্যাচ" },
     { href: "/about", label: "আমরা" },
     { href: "/contact", label: "যোগাযোগ" },
     { href: "/gallery", label: "গ্যালারী" },

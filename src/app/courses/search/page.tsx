@@ -1,11 +1,13 @@
+import { Fragment } from "react";
+import CourseResult from "./_utils/_components/course-result";
 import PageHeader from "@/components/molecules/page-header/page-header";
-
-const CoursesSearchPage = () => {
+const CourseSearchPage = () => {
   return (
-    <div className="container section">
-      <PageHeader title="Search Page" />
-    </div>
+    <Fragment>
+      <PageHeader title="Courses Result" />
+      <CourseResult />
+    </Fragment>
   );
 };
 
-export default CoursesSearchPage;
+export default CourseSearchPage;

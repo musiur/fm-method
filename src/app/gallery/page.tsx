@@ -1,7 +1,14 @@
+import PageHeader from "@/components/molecules/page-header/page-header";
+import { default as GalleryContainer } from "./_utils/_components/gallery-page";
+import { Fragment } from "react";
+
 const GalleryPage = () => {
-  return <div>GalleryPage</div>;
+  return (
+    <Fragment>
+      <PageHeader title="গ্যালারী" description="আমাদের ছবি ও ভিডিও সংগ্রহ" />
+      <GalleryContainer />
+    </Fragment>
+  );
 };
 
 export default GalleryPage;
-
-

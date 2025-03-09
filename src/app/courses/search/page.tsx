@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import CourseResult from "./_utils/_components/course-result";
+import CourseResult from "./_partials/_components/course-result";
 import PageHeader from "@/components/molecules/page-header/page-header";
 const CourseSearchPage = () => {
   return (

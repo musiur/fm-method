@@ -1,5 +1,5 @@
 import PageHeader from "@/components/molecules/page-header/page-header";
-import { default as GalleryContainer } from "./_utils/_components/gallery-page";
+import { default as GalleryContainer } from "./_partials/_components/gallery-page";
 import { Fragment } from "react";
 
 const GalleryPage = () => {

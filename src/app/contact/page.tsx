@@ -1,7 +1,7 @@
 import PageHeader from "@/components/molecules/page-header/page-header";
-import ContactCards from "./_utils/_components/contact-cards";
+import ContactCards from "./_partials/_components/contact-cards";
 import { Fragment } from "react";
-import ContactForm from "./_utils/_components/contact-form";
+import ContactForm from "./_partials/_components/contact-form";
 
 const ContactPage = () => {
   return (

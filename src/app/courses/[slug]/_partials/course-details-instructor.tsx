@@ -1,4 +1,4 @@
-import FMSirTwo from "@/app/_utils/_assets/fm-sir-two.png"
+import FMSirTwo from "@/app/_partials/_assets/fm-sir-two.png"
 import Image from "next/image";
 
 const CourseDetailsInstructor = () => {

@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { ReactElement } from 'react';
 import { ChevronRight } from 'lucide-react';
 import clsx from 'clsx';
-import BasicIcon from '../_utils/_assets/basic-icon';
-import IntermediateIcon from '../_utils/_assets/intermediate-icon';
-import IeltsIcon from '../_utils/_assets/ielts-icon';
-import AdvancedIcon from '../_utils/_assets/advanced-icon';
+import BasicIcon from '../_partials/_assets/basic-icon';
+import IntermediateIcon from '../_partials/_assets/intermediate-icon';
+import IeltsIcon from '../_partials/_assets/ielts-icon';
+import AdvancedIcon from '../_partials/_assets/advanced-icon';
 
 interface CourseCategory {
   id: number;

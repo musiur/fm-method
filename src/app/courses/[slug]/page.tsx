@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import CourseDetailsHero from "./_utils/course-details-hero";
-import CourseDetailsTabs from "./_utils/course-details-tabs";
-import HomeNewEnglishCourses from "../../_utils/_components/home-new-english-courses";
+import CourseDetailsHero from "./_partials/course-details-hero";
+import CourseDetailsTabs from "./_partials/course-details-tabs";
+import HomeNewEnglishCourses from "../../_partials/_components/home-new-english-courses";
 
 const CourseDetailsPage = () => {
   return <Fragment>

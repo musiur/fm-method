@@ -7,9 +7,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { DataCourses } from "@/app/courses/search/_utils/_data/data-courses";
-import { TypeCourseCard } from "@/app/courses/search/_utils/_types/type-schema-course-card";
-import CourseCard from "@/app/courses/search/_utils/_components/course-card";
+import { DataCourses } from "@/app/courses/search/_partials/_data/data-courses";
+import { TypeCourseCard } from "@/app/courses/search/_partials/_types/type-schema-course-card";
+import CourseCard from "@/app/courses/search/_partials/_components/course-card";
 
 const categories = [
   { id: "all", label: "See All" },

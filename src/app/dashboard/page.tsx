@@ -1,9 +1,7 @@
+import OverviewPage from "./(platform)/_overview/page";
+
 const DashboardPage = () => {
-  return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
-  );
+  return <OverviewPage />;
 };
 
 export default DashboardPage;

@@ -1,4 +1,3 @@
-
 import { Fragment } from "react";
 import HomeHero from "./_partials/_components/home-hero";
 import HomeCourseList from "./_partials/_components/home-course-list";
@@ -7,8 +6,12 @@ import HomeOnlineCourses from "./_partials/_components/home-online-courses";
 import HomeNewEnglishCourses from "./_partials/_components/home-new-english-courses";
 import HomeTestimonials from "./_partials/_components/home-testimonials";
 import HomeBannerSuccess from "./_partials/_components/home-banner-success";
- 
-const Page = () => {
+import { GET_BOOKS } from "./_partials/_actions/get-books";
+
+const Page = async () => {
+  const books = await GET_BOOKS();
+  console.log("[BOOKS]", books);
+
   return (
     <Fragment>
       <HomeHero />
@@ -20,6 +23,6 @@ const Page = () => {
       <HomeBannerSuccess />
     </Fragment>
   );
-}
+};
 
 export default Page;

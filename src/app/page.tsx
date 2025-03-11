@@ -6,12 +6,8 @@ import HomeOnlineCourses from "./_partials/_components/home-online-courses";
 import HomeNewEnglishCourses from "./_partials/_components/home-new-english-courses";
 import HomeTestimonials from "./_partials/_components/home-testimonials";
 import HomeBannerSuccess from "./_partials/_components/home-banner-success";
-import { GET_BOOKS } from "./_partials/_actions/get-books";
 
-const Page = async () => {
-  const books = await GET_BOOKS();
-  console.log("[BOOKS]", books);
-
+const Page = () => {
   return (
     <Fragment>
       <HomeHero />

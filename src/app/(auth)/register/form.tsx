@@ -6,6 +6,7 @@ import Carousel from "@/components/molecules/carousel";
 import Slide from "./slide";
 import SlideImage from "./caute.png";
 import Link from "next/link";
+import { AUTH_REGISTER } from "../_partials/_actions/auth-register";
 
 const Slides = [
   {
@@ -31,7 +32,7 @@ const FormXStructure: FormX__TYPE_Structure = {
       validation: z.string().min(2, {
         message: "সম্পূর্ণ নাম লিখুন।",
       }),
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       id: 2,
@@ -42,18 +43,7 @@ const FormXStructure: FormX__TYPE_Structure = {
       validation: z.string().email({
         message: "ইমেইল এড্রেস লিখুন।",
       }),
-      defaultValue: ""
-    },
-    {
-      id: 3,
-      type: "text",
-      name: "phone",
-      label: "ফোন নম্বর",
-      placeholder: "01712345678",
-      validation: z.string().min(11, {
-        message: "ফোন নম্বর লিখুন।",
-      }),
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       id: 4,
@@ -64,13 +54,14 @@ const FormXStructure: FormX__TYPE_Structure = {
       validation: z.string().min(8, {
         message: "পাসওয়ার্ড লিখুন।",
       }),
-      defaultValue: ""
+      defaultValue: "",
     },
   ],
   submission: {
     toast: true,
-    submitHandler: (data) => {
-      console.log(data);
+    submitHandler: async (data) => {
+      const result = await AUTH_REGISTER(data);
+      return result;
     },
     buttonText: "রেজিস্টার",
     buttonClassName: "w-full",
@@ -90,9 +81,7 @@ const RegisterForm = () => {
         <FormX structure={FormXStructure} />
         <hr />
         <div className="flex items-center gap-2">
-          <p className="text-sm text-gray-500">
-            অলরেডি একাউন্ট আছে?
-          </p>
+          <p className="text-sm text-gray-500">অলরেডি একাউন্ট আছে?</p>
           <Link href="/login" className="text-sm text-blue-500">
             লগ-ইন করুন
           </Link>

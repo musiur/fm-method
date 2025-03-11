@@ -13,6 +13,7 @@ import InputX, { InputX___Type_InputTypes } from "./input-x"
 import CheckboxX from "./checkbox-x"
 import React, { Fragment } from "react"
 import { cn } from "@/lib/utils"
+import { toast } from "sonner"
 
 export type FormX__TYPE_Field = {
   id: number;
@@ -31,7 +32,7 @@ export type FormX__TYPE_Structure = {
   className?: string;
   submission: {
     toast: boolean;
-    submitHandler: (data: any) => void;
+    submitHandler: (data: any) => Promise<{ success: boolean, message: string, error?: string, data?: any }>;
     buttonText?: string;
     buttonClassName?: string;
   },
@@ -56,7 +57,13 @@ export const FormXStructure_DEMO: FormX__TYPE_Structure = {
   ],
   submission: {
     toast: true,
-    submitHandler: (data) => { console.log(data) },
+    submitHandler: async (data) => {
+      return Promise.resolve({
+        success: true,
+        message: "Form submitted successfully",
+        data: data
+      })
+    },
     buttonText: "Submit",
     buttonClassName: "w-full"
   }
@@ -97,8 +104,14 @@ export function FormX({ structure = FormXStructure_DEMO, className = "" }: { str
     mode: "onChange",
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    structure?.submission?.submitHandler(data);
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    const result = await structure?.submission?.submitHandler(data);
+
+    if (result?.success) {
+      toast.success(result?.message);
+    } else {
+      toast.error(result?.message);
+    }
   }
 
   return (

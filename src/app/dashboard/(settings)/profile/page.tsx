@@ -1,5 +1,7 @@
+import ProfileWrapper from "./_partials/_components/profile-wrapper";
+
 const ProfilePage = () => {
-  return <div>ProfilePage</div>;
+  return <ProfileWrapper />;
 };
 
 export default ProfilePage;

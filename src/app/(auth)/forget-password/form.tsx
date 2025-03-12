@@ -36,8 +36,12 @@ const FormXStructure: FormX__TYPE_Structure = {
   ],
   submission: {
     toast: true,
-    submitHandler: (data) => {
+    submitHandler: async (data) => {
       console.log(data);
+      return Promise.resolve({
+        success: true,
+        message: "পাসওয়ার্ড পরিবর্তন করা হয়েছে।",
+      });
     },
     buttonText: "সাবমিট",
     buttonClassName: "w-full",

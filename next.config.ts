@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
       {
         hostname: 'so90190s4w.ufs.sh',
       },
+      {
+        hostname: 'github.com',
+      },
     ],
   },
 };

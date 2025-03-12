@@ -2,23 +2,23 @@
 
 import CONFIGS from "@/configs";
 
-export const AUTH_REGISTER = async (data: { email: string, password: string, name: string, password_confirmation: string }) => {
+export const VERIFY_ACCOUNT = async (payload: { email: string, verification_code: string }) => {
     try {
-        const response = await fetch(`${CONFIGS.BACKEND_BASE_URL}/api/auth/register`, {
+        const response = await fetch(`${CONFIGS.BACKEND_BASE_URL}/api/auth/verify`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify(data),
-        });
+            body: JSON.stringify(payload),
+        },
+        );
         const result = await response.json();
-
         const errors = result?.errors && Object.keys(result?.errors)?.length ? Object.values(result?.errors)?.join(", ") : null;
-        
+
         return {
             success: errors ? false : true,
-            message: errors ? errors : "User registered successfully",
+            message: errors ? errors : "Account verified successfully",
             ...result
         };
     } catch (error) {
@@ -29,4 +29,3 @@ export const AUTH_REGISTER = async (data: { email: string, password: string, nam
         }
     }
 };
-

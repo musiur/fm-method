@@ -6,6 +6,8 @@ import Carousel from "@/components/molecules/carousel";
 import Slide from "./slide";
 import SlideImage from "./caute.png";
 import Link from "next/link";
+import { AUTH_LOGIN } from "../_partials/_actions/auth-login";
+import { toast } from "sonner";
 
 const Slides = [
   {
@@ -31,7 +33,7 @@ const FormXStructure: FormX__TYPE_Structure = {
       validation: z.string().email({
         message: "ইমেইল এড্রেস লিখুন।",
       }),
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       id: 2,
@@ -42,15 +44,20 @@ const FormXStructure: FormX__TYPE_Structure = {
       validation: z.string().min(8, {
         message: "পাসওয়ার্ড লিখুন।",
       }),
-      defaultValue: ""
+      defaultValue: "",
     },
   ],
   submission: {
     toast: true,
-    submitHandler: (data) => {
-      console.log(data);
+    submitHandler: async (data) => {
+      const result = await AUTH_LOGIN(data);
+      if (result.success) {
+        toast.success(result.message);
+        window.location.href = "/dashboard";
+      }
+      return result;
     },
-    buttonText: "লগ-ইন",
+    buttonText: "লগ-ইন করুন",
     buttonClassName: "w-full",
   },
 };
@@ -61,24 +68,18 @@ const LoginForm = () => {
       <div className="max-w-[500px] w-full space-y-8">
         <div>
           <h3 className="text-2xl font-bold">লগ-ইন করুন</h3>
-          <p className="text-sm text-gray-500">
-            ফর্মটি পূরণ করুন লগ-ইন করতে
-          </p>
+          <p className="text-sm text-gray-500">ফর্মটি পূরণ করুন লগ-ইন করতে</p>
         </div>
         <FormX structure={FormXStructure} />
         <hr />
         <div className="flex items-center gap-2">
-          <p className="text-sm text-gray-500">
-            পাসওয়ার্ড ভুলে গেছেন?
-          </p>
+          <p className="text-sm text-gray-500">পাসওয়ার্ড ভুলে গেছেন?</p>
           <Link href="/forget-password" className="text-sm text-blue-500">
             পাসওয়ার্ড পরিবর্তন করুন
           </Link>
         </div>
         <div className="flex items-center gap-2">
-          <p className="text-sm text-gray-500">
-            রেজিস্ট্রেশন করা হয়নি?
-          </p>
+          <p className="text-sm text-gray-500">রেজিস্ট্রেশন করা হয়নি?</p>
           <Link href="/register" className="text-sm text-blue-500">
             রেজিস্ট্রেশন করুন
           </Link>

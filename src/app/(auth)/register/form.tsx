@@ -1,12 +1,11 @@
 "use client";
 
-import { FormX, FormX__TYPE_Structure } from "@/components/form-x/form-x";
-import { z } from "zod";
 import Carousel from "@/components/molecules/carousel";
 import Slide from "./slide";
 import SlideImage from "./caute.png";
 import Link from "next/link";
-import { AUTH_REGISTER } from "../_partials/_actions/auth-register";
+import { DataRegistrationFormStructure } from "@/app/_partials/_data/data-registration-form-structure";
+import { FormX } from "@/components/form-x/form-x";
 
 const Slides = [
   {
@@ -21,53 +20,6 @@ const Slides = [
   },
 ];
 
-const FormXStructure: FormX__TYPE_Structure = {
-  fields: [
-    {
-      id: 1,
-      type: "text",
-      name: "username",
-      label: "সম্পূর্ণ নাম",
-      placeholder: "মোহাম্মাহ আবদুল্লাহ আল বাকী",
-      validation: z.string().min(2, {
-        message: "সম্পূর্ণ নাম লিখুন।",
-      }),
-      defaultValue: "",
-    },
-    {
-      id: 2,
-      type: "text",
-      name: "email",
-      label: "ইমেইল এড্রেস",
-      placeholder: "john.doe@example.abc",
-      validation: z.string().email({
-        message: "ইমেইল এড্রেস লিখুন।",
-      }),
-      defaultValue: "",
-    },
-    {
-      id: 4,
-      type: "password",
-      name: "password",
-      label: "পাসওয়ার্ড",
-      placeholder: "********",
-      validation: z.string().min(8, {
-        message: "পাসওয়ার্ড লিখুন।",
-      }),
-      defaultValue: "",
-    },
-  ],
-  submission: {
-    toast: true,
-    submitHandler: async (data) => {
-      const result = await AUTH_REGISTER(data);
-      return result;
-    },
-    buttonText: "রেজিস্টার",
-    buttonClassName: "w-full",
-  },
-};
-
 const RegisterForm = () => {
   return (
     <div className="container section flex flex-col md:flex-row items-center justify-between gap-10">
@@ -78,7 +30,7 @@ const RegisterForm = () => {
             ফর্মটি পূরণ করুন রেজিস্ট্রেশন করতে
           </p>
         </div>
-        <FormX structure={FormXStructure} />
+        <FormX structure={DataRegistrationFormStructure} />
         <hr />
         <div className="flex items-center gap-2">
           <p className="text-sm text-gray-500">অলরেডি একাউন্ট আছে?</p>

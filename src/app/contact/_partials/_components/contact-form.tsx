@@ -18,8 +18,7 @@ const ContactForm = () => {
       message: "",
     },
   });
-  const onSubmit = (data: ContactFormSchemaType) => {
-    console.log(data);
+  const onSubmit = () => {
     toast.success("সাবমিট করা হয়েছে");
     form.reset();
   };

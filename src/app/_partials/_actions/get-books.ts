@@ -5,7 +5,7 @@ import { tryCatch } from "@/lib/error-handlers/try-catch";
 import { TypeActionResponse } from "@/lib/types/action-response";
 
 export const GET_BOOKS = async <Data,>(): Promise<TypeActionResponse<Data>> => {
-    const { data, error } = await tryCatch(fetch(`${CONFIGS.BACKEND_BASE_URL}/api/book/list`, {
+    const { data, error } = await tryCatch(fetch(`${CONFIGS.BACKEND_BASE_URL}/api/book/list?limit=8`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -13,7 +13,6 @@ export const GET_BOOKS = async <Data,>(): Promise<TypeActionResponse<Data>> => {
     }))
 
     if (error) {
-        console.log("[GET_BOOKS]", error);
         return {
             success: false,
             message: "Failed to fetch books"

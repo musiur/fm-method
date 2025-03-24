@@ -14,14 +14,14 @@ import { TypeEventCard } from "../_types/type-event-card";
 const EventCard = ({
   title,
   author,
-  date,
+  // date,
   category = "Association",
   comments = 0,
   imageUrl,
   slug,
   shortDescription,
 }: TypeEventCard) => {
-  console.log(date);
+  
   return (
     <div className="max-w-3xl border border-gray-200 rounded-lg overflow-hidden shadow-sm">
       <div className="relative h-[200px] md:h-[320px]">

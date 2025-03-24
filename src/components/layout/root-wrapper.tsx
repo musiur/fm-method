@@ -20,14 +20,12 @@ const RootWrapper = ({
 }): React.ReactNode => {
   const pathname = usePathname();
   const isDashboard = pathname.includes("/dashboard");
-  return isDashboard ? (
-    <main>{children}</main>
-  ) : (
+  return (
     <Fragment>
-      <UnderConstructionBanner />
-      <Navbar />
+      {!isDashboard ? <UnderConstructionBanner /> : null}
+      {!isDashboard ? <Navbar /> : null}
       <main>{children}</main>
-      <Footer />
+      {!isDashboard ? <Footer /> : null}
       <Toaster />
     </Fragment>
   );

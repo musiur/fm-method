@@ -14,7 +14,6 @@ export const GET_COURSE_BY_TAG = async <Data,>(tag: string): Promise<TypeActionR
     }));
 
     if (error) {
-        console.log("[GET_COURSES_BY_TAG]", error);
         return {
             success: false,
             message: "Failed to fetch courses"

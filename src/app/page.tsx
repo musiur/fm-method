@@ -8,18 +8,18 @@ import HomeTestimonials from "./_partials/_components/home-testimonials";
 import HomeBannerSuccess from "./_partials/_components/home-banner-success";
 import { cookies } from "next/headers";
 import { GET_COURSE_BY_TAG } from "./_partials/_actions/get-courses-by-tag";
-import { TypeActionResponse } from "@/lib/types/action-response";
-import { TypeGetBooksByTags } from "./_partials/_types/type-get-books-by-tags";
+import HomeBookList from "./_partials/_components/home-book-list";
+// import { TypeActionResponse } from "@/lib/types/action-response";
+// import { TypeGetBooksByTags } from "./_partials/_types/type-get-books-by-tags";
 
 const Page = async () => {
   const refreshToken = (await cookies()).get("refresh_token")?.value;
   const accessToken = (await cookies()).get("access_token")?.value;
   const loggedIn = accessToken && refreshToken ? true : false;
 
-  const result: TypeActionResponse<TypeGetBooksByTags> = await GET_COURSE_BY_TAG("featured");
+  // const result: TypeActionResponse<TypeGetBooksByTags> = 
+  await GET_COURSE_BY_TAG("featured");
 
-  
-  console.log(result.data)
   
   
   return (
@@ -29,6 +29,7 @@ const Page = async () => {
       <HomeAbout />
       <HomeOnlineCourses />
       <HomeNewEnglishCourses />
+      <HomeBookList />
       <HomeTestimonials />
       <HomeBannerSuccess />
     </Fragment>

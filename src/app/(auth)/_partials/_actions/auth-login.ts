@@ -21,9 +21,15 @@ export const AUTH_LOGIN = async (payload: { email: string, password: string }) =
         if (refreshToken && accessToken) {
             (await cookies()).set("refresh_token", refreshToken);
             (await cookies()).set("access_token", accessToken);
+        }else{
+            return {
+                success: false,
+                message: "Unauthorized request",
+                ...result
+            }
         }
 
-        const errors = result?.errors && Object.keys(result?.errors)?.length ? Object.values(result?.errors)?.join(", ") : null;
+        const errors = result?.errors && Object.keys(result?.errors)?.length ? Object.values(result?.errors || result?.error)?.join(", ") : null;
         return {
             success: errors ? false : true,
             message: errors ? errors : "Login successful",

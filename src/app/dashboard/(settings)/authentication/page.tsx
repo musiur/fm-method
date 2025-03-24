@@ -1,5 +1,11 @@
+import { ChangePasswordForm } from "./change-password-form";
+
 const AuthenticationPage = () => {
-  return <div>AuthenticationPage</div>;
+  return (
+    <div className="p-4 md:p-10">
+      <ChangePasswordForm />
+    </div>
+  );
 };
 
 export default AuthenticationPage;

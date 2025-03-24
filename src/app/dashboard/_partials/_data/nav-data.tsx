@@ -1,4 +1,12 @@
-import { BookOpen, NotebookPen, PieChart, Shield, ShoppingCart, User } from "lucide-react";
+import {
+  Book,
+  BookOpen,
+  NotebookPen,
+  PieChart,
+  Shield,
+  ShoppingCart,
+  User,
+} from "lucide-react";
 
 export const data = {
   user: {
@@ -16,6 +24,11 @@ export const data = {
       name: "Courses",
       url: "/dashboard/courses",
       icon: <BookOpen />,
+    },
+    {
+      name: "Books",
+      url: "/dashboard/books",
+      icon: <Book />,
     },
     {
       name: "Quizzes",

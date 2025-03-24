@@ -3,8 +3,15 @@ import { Star } from "lucide-react";
 import { TypeCourseCard } from "../_types/type-schema-course-card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import clsx from "clsx";
 
-const CourseCard = ({ course }: { course: TypeCourseCard }) => {
+const CourseCard = ({
+  course,
+  purchased,
+}: {
+  course: TypeCourseCard;
+  purchased?: boolean;
+}) => {
   return (
     <div
       key={course.id}
@@ -45,7 +52,11 @@ const CourseCard = ({ course }: { course: TypeCourseCard }) => {
             </span>
           </div>
         </div>
-        <div className="mt-auto space-y-2">
+        <div
+          className={clsx("mt-auto space-y-2", {
+            hidden: purchased,
+          })}
+        >
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <span>{course.difficulty}</span>
             <span>•</span>

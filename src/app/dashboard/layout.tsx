@@ -1,6 +1,6 @@
-import { NavSidebar } from "./_partials/_components/nav-sidebar";
+
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import NavHeader from "./_partials/_components/nav-header";
+import { NavHeader, NavSidebar } from "@/components/pages/dashboard";
 
 const DashboardLayout = ({
   children,

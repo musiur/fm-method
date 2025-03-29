@@ -1,6 +1,6 @@
-import PageHeader from "@/components/molecules/page-header/page-header";
-import RegisterForm from "./form";
 import { Fragment } from "react";
+import { PageHeader } from "@/components/molecules";
+import RegisterForm from "@/components/pages/(auth)/register/form";
 
 
 const RegisterPage = () => {

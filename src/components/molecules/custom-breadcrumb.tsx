@@ -11,7 +11,7 @@ import {
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 
-const CustomBreadcrumb = () => {
+export const CustomBreadcrumb = () => {
   const pathname = usePathname();
   const breadcrumbs = pathname.split("/").filter(Boolean);
 
@@ -42,5 +42,3 @@ const CustomBreadcrumb = () => {
     </Breadcrumb>
   );
 };
-
-export default CustomBreadcrumb;

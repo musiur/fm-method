@@ -1,6 +1,6 @@
-import PageHeader from "@/components/molecules/page-header/page-header";
 import { Fragment } from "react";
-import LoginForm from "./form";
+import { PageHeader } from "@/components/molecules";
+import LoginForm from "@/components/pages/(auth)/login/form";
 
 
 const LoginPage = () => {

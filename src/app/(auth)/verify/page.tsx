@@ -1,6 +1,6 @@
-import PageHeader from "@/components/molecules/page-header/page-header";
 import { Fragment } from "react";
-import VerificationForm from "./form";
+import { PageHeader } from "@/components/molecules";
+import VerificationForm from "@/components/pages/(auth)/verify/form";
 
 
 const VerifyAccountPage = () => {

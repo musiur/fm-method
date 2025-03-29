@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import clsx from "clsx";
 import {
   Select,
   SelectContent,
@@ -6,10 +6,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { DataCourses } from "@/app/courses/search/_partials/_data/data-courses";
-import { TypeCourseCard } from "@/app/courses/search/_partials/_types/type-schema-course-card";
-import CourseCard from "@/app/courses/search/_partials/_components/course-card";
-import clsx from "clsx";
+import {
+  TypeCard,
+  Card,
+  DataCourses
+} from "@/components/pages/courses"
+import { Button } from "@/components/ui/button";
 
 const categories = [
   { id: "all", label: "See All" },
@@ -27,8 +29,8 @@ const CoursePage = async () => {
   const courseData = await getCourses();
   const purchased = true;
 
-  const list = courseData.map((course: TypeCourseCard) => {
-    return <CourseCard key={course.id} course={course} purchased={purchased} />;
+  const list = courseData.map((course: TypeCard) => {
+    return <Card key={course.id} course={course} purchased={purchased} />;
   });
 
   return (

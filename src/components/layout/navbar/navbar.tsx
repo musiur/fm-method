@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import CourseImage from "@/app/_partials/_assets/bank-jobs.png";
+import CourseImage from "@/components/assets/bank-jobs.png";
 import Image from "next/image";
 import clsx from "clsx";
 import { BookOpen, Clock, Menu, X } from "lucide-react";

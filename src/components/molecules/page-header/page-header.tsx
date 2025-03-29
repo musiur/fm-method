@@ -1,8 +1,8 @@
 import Image from "next/image";
 import BackgroundImage from "./page-header-background-image.png";
-import CustomBreadcrumb from "../custom-breadcrumb";
+import { CustomBreadcrumb } from "../custom-breadcrumb";
 
-const PageHeader = ({
+export const PageHeader = ({
   title = "Page Header",
   description,
 }: {
@@ -25,5 +25,3 @@ const PageHeader = ({
     </div>
   );
 };
-
-export default PageHeader;

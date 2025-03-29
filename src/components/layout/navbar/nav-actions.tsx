@@ -11,7 +11,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { AUTH_LOGOUT } from "@/app/(auth)/_partials/_actions/auth-logout";
+import { _LOGOUT } from "@/api/auth/_logout";
 import { LogOutIcon, SquareActivityIcon, UserIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
@@ -33,7 +33,7 @@ const NavActions = () => {
   }, [pathname]);
 
   const handleLogout = async () => {
-    await AUTH_LOGOUT();
+    await _LOGOUT();
   };
 
   return (

@@ -1,6 +1,6 @@
-import PageHeader from "@/components/molecules/page-header/page-header";
 import { Fragment } from "react";
-import ForgetPasswordForm from "./form";
+import { PageHeader } from "@/components/molecules";
+import ForgetPasswordForm from "@/components/pages/(auth)/forget-password/form";
 
 
 const ForgetPasswordPage = () => {

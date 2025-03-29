@@ -1,0 +1,12 @@
+export { Hero } from "./hero";
+export { About } from "./about";
+export { CourseList } from "./course-list";
+export { OnlineCourses } from "./online-courses";
+export { NewEnglishCourses } from "./new-english-courses";
+export { Testimonials } from "./testimonials";
+export { BannerSuccess } from "./banner-success";
+export { BookList } from "./book-list";
+export { BasicIcon } from './basic-icon';
+export { IntermediateIcon } from './intermediate-icon';
+export { IeltsIcon } from './ielts-icon';
+export { AdvancedIcon } from './advanced-icon';

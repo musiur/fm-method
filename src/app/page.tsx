@@ -1,14 +1,16 @@
 import { Fragment } from "react";
-import HomeHero from "./_partials/_components/home-hero";
-import HomeCourseList from "./_partials/_components/home-course-list";
-import HomeAbout from "./_partials/_components/home-about";
-import HomeOnlineCourses from "./_partials/_components/home-online-courses";
-import HomeNewEnglishCourses from "./_partials/_components/home-new-english-courses";
-import HomeTestimonials from "./_partials/_components/home-testimonials";
-import HomeBannerSuccess from "./_partials/_components/home-banner-success";
+import {
+  About,
+  BannerSuccess,
+  BookList,
+  CourseList,
+  Hero,
+  NewEnglishCourses,
+  OnlineCourses,
+  Testimonials,
+} from "@/components/pages/home"
 import { cookies } from "next/headers";
-import { GET_COURSE_BY_TAG } from "./_partials/_actions/get-courses-by-tag";
-import HomeBookList from "./_partials/_components/home-book-list";
+import { GET_COURSE_BY_TAG } from "@/api/courses/get-courses-by-tag";
 // import { TypeActionResponse } from "@/lib/types/action-response";
 // import { TypeGetBooksByTags } from "./_partials/_types/type-get-books-by-tags";
 
@@ -24,14 +26,14 @@ const Page = async () => {
   
   return (
     <Fragment>
-      <HomeHero loggedIn={loggedIn} />
-      <HomeCourseList />
-      <HomeAbout />
-      <HomeOnlineCourses />
-      <HomeNewEnglishCourses />
-      <HomeBookList />
-      <HomeTestimonials />
-      <HomeBannerSuccess />
+      <Hero loggedIn={loggedIn} />
+      <CourseList />
+      <About />
+      <OnlineCourses />
+      <NewEnglishCourses />
+      <BookList />
+      <Testimonials />
+      <BannerSuccess />
     </Fragment>
   );
 };

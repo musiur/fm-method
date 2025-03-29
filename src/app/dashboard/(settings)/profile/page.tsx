@@ -1,4 +1,4 @@
-import ProfileWrapper from "./_partials/_components/profile-wrapper";
+import { ProfileWrapper } from "@/components/pages/dashboard";
 
 const ProfilePage = () => {
   return <ProfileWrapper />;

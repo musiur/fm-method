@@ -1,12 +1,12 @@
-import PageHeader from "@/components/molecules/page-header/page-header";
 import { Fragment } from "react";
-import EventListContainer from "./_partials/_components/event-list-container";
+import { ListContainer } from "@/components/pages/events";
+import { PageHeader } from "@/components/molecules";
 
 const EventsPage = () => {
   return (
     <Fragment>
       <PageHeader title="ইভেন্ট" />
-      <EventListContainer />
+      <ListContainer />
     </Fragment>
   );
 };

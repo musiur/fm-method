@@ -1,4 +1,4 @@
-import PageLoading from "@/components/molecules/page-loading";
+import { PageLoading } from "@/components/molecules";
 
 const Loading = () => <PageLoading />;
 

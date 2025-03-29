@@ -1,14 +1,13 @@
 import { Fragment } from "react";
-import CourseDetailsHero from "./_partials/course-details-hero";
-import CourseDetailsTabs from "./_partials/course-details-tabs";
-import HomeNewEnglishCourses from "../../_partials/_components/home-new-english-courses";
+import { DetailsHero, DetailsTabs } from "@/components/pages/courses";
+import { NewEnglishCourses } from "@/components/pages/home";
 
 const CourseDetailsPage = () => {
   return (
     <Fragment>
-      <CourseDetailsHero />
-      <CourseDetailsTabs />
-      <HomeNewEnglishCourses />
+      <DetailsHero />
+      <DetailsTabs />
+      <NewEnglishCourses />
     </Fragment>
   );
 };

@@ -42,7 +42,7 @@ interface CarouselProps {
     grid?: boolean;
 }
 
-const Carousel = ({ list, title, col = 4, darkbg = false, grid = false }: CarouselProps) => {
+export const Carousel = ({ list, title, col = 4, darkbg = false, grid = false }: CarouselProps) => {
     const slidesPerView = getBreakpoint(col);
     const condiationalModules = grid ? [Navigation, Pagination, Autoplay, Grid] : [Navigation, Pagination, Autoplay];
 
@@ -114,5 +114,3 @@ const CarouselController = ({ className, left = true }: CarouselControllerProps)
         </div>
     );
 };
-
-export default Carousel;

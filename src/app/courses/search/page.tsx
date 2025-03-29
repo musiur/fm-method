@@ -1,11 +1,12 @@
 import { Fragment } from "react";
-import CourseResult from "./_partials/_components/course-result";
-import PageHeader from "@/components/molecules/page-header/page-header";
+import { Result } from "@/components/pages/courses";
+import { PageHeader } from "@/components/molecules";
+
 const CourseSearchPage = () => {
   return (
     <Fragment>
       <PageHeader title="Courses Result" />
-      <CourseResult />
+      <Result />
     </Fragment>
   );
 };

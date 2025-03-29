@@ -1,8 +1,8 @@
-import { GET_BOOKS } from "@/app/_partials/_actions/get-books";
-import { TypeActionResponse } from "@/lib/types/action-response";
 import Image from "next/image";
-import { PlaceholderImageURL } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
+import { GET_BOOKS } from "@/api/books/get-books";
+import { PlaceholderImageURL } from "@/lib/constants";
+import { TypeActionResponse } from "@/lib/types/action-response";
 
 type Books = {
   id: number;

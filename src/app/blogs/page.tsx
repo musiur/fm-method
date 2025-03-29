@@ -1,12 +1,12 @@
-import PageHeader from "@/components/molecules/page-header/page-header";
 import { Fragment } from "react";
-import BlogListContainer from "./_partials/_components/blog-list-container";
+import { PageHeader } from "@/components/molecules";
+import { ListContainer } from "@/components/pages/blogs";
 
 const BlogsPage = () => {
   return (
     <Fragment>
       <PageHeader title="ব্লগ" />
-      <BlogListContainer />
+      <ListContainer />
     </Fragment>
   );
 };

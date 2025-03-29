@@ -28,9 +28,14 @@ export const AUTH_REFRESHED_TOKEN = async (path: string) => {
 
         const errors = result?.errors && Object.keys(result?.errors)?.length ? Object.values(result?.errors)?.join(", ") : null;
 
-        redirect(path)
+        if(errors){
+            return {
+                success: false,
+                message: errors || "Something went wrong",
+            }
+        }
 
-        return errors ? false : true
+        redirect(path)
     } catch (error) {
         return {
             success: false,

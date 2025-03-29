@@ -1,10 +1,10 @@
 "use server";
 
-import { _LOGOUT } from "@/api/auth/_logout";
-import { AUTH_REFRESHED_TOKEN } from "@/api/auth/post-refreshed-token";
 import CONFIGS from "@/configs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { _LOGOUT } from "@/api/auth/_logout";
+import { AUTH_REFRESHED_TOKEN } from "@/api/auth/post-refreshed-token";
 
 export async function GET_PROFILE() {
     try {

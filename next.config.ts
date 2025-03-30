@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
       {
         hostname: 'github.com',
       },
+      {
+        hostname: 'lms.fmmethod.online',
+      },
     ],
   },
 };

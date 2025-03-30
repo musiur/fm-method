@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import InputX from "@/components/form-x/input-x";
-import { ChangePassword } from "../../../../../api/auth/post-change-password";
+import { ChangePassword } from "@/api/auth/post-change-password";
 
 const FormSchema = z
   .object({

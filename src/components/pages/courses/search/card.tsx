@@ -1,15 +1,15 @@
+import clsx from "clsx";
+import Link from "next/link";
 import Image from "next/image";
 import { Star } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import clsx from "clsx";
-import { TypeCard } from "./type-schema-card";
+import { TypeGetBooksByTags } from "@/components/pages/home/type-get-books-by-tags";
 
 export const Card = ({
   course,
   purchased,
 }: {
-  course: TypeCard;
+  course: TypeGetBooksByTags;
   purchased?: boolean;
 }) => {
   return (
@@ -63,10 +63,10 @@ export const Card = ({
           </div>
           <div className="flex items-center gap-2">
             <span className="font-bold">
-              ৳{course.pricing.sell_price.toFixed(2)}
+              ৳{course.pricing.sell_price}
             </span>
             <span className="text-sm text-muted-foreground line-through">
-              ৳{course.pricing.regular_price.toFixed(2)}
+              ৳{course.pricing.regular_price}
             </span>
           </div>
         </div>

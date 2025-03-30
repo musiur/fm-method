@@ -1,16 +1,17 @@
 import { Carousel } from "@/components/molecules";
-import { DataCourses } from "@/components/pages/courses/search/data-courses";
-import { TypeCard } from "@/components/pages/courses/search/type-schema-card";
+import { TypeGetBooksByTags } from "./type-get-books-by-tags";
 import { Card } from "@/components/pages/courses/search/card";
-
-const getCourses = async () => {
-  return DataCourses;
-};
+import { TypeActionResponse } from "@/lib/types/action-response";
+import { GET_COURSE_BY_TAG } from "@/api/courses/get-courses-by-tag";
 
 export const NewEnglishCourses = async () => {
-  const courseData = await getCourses();
+  const courseData: TypeActionResponse<TypeGetBooksByTags[]> = await GET_COURSE_BY_TAG("featured");
 
-  const list = courseData.map((course: TypeCard) => {
+  if (!courseData?.success) {
+    return <div>No course found!</div>;
+  }
+
+  const list = courseData?.data?.map((course: TypeGetBooksByTags) => {
     return <Card key={course.id} course={course} />;
   });
 
@@ -23,7 +24,9 @@ export const NewEnglishCourses = async () => {
             NEW ENGLISH COURSES
           </h2>
         </div>
-        <Carousel list={list} title="home-new-english-courses-list" col={4} />
+        {
+          list ? <Carousel list={list} title="home-new-english-courses-list" col={4} /> : null
+        }
       </div>
     </div>
   );

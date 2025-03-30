@@ -1,5 +1,5 @@
+import clsx from "clsx";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -7,8 +7,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { DataCourses } from "@/components/pages/courses/search/data-courses";
-import { TypeCard, Card } from "@/components/pages/courses";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/pages/courses";
+import { TypeGetBooksByTags } from "./type-get-books-by-tags";
+import { TypeActionResponse } from "@/lib/types/action-response";
+import { GET_COURSE_BY_TAG } from "@/api/courses/get-courses-by-tag";
 
 const categories = [
   { id: "all", label: "See All" },
@@ -18,16 +21,18 @@ const categories = [
   { id: "ielts", label: "IELTS" },
 ];
 
-const getCourses = async () => {
-  return DataCourses;
-};
-
 export const OnlineCourses = async () => {
-  const courseData = await getCourses();
+  const courseData: TypeActionResponse<TypeGetBooksByTags[]> = await GET_COURSE_BY_TAG("featured");
 
-  const list = courseData.map((course: TypeCard) => {
+  if (!courseData?.success) {
+    return <div>No course found!</div>;
+  }
+
+  const list = courseData?.data?.map((course: TypeGetBooksByTags) => {
     return <Card key={course.id} course={course} />;
   });
+
+  const showMore = courseData?.data?.length && courseData?.data?.length < 5;
 
   return (
     <div className="section">
@@ -38,7 +43,10 @@ export const OnlineCourses = async () => {
           </h2>
 
           {/* Desktop Category List */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className={clsx("hidden items-center gap-6", {
+            "hidden": showMore,
+            "md:flex": !showMore
+          })}>
             {categories.map((category) => (
               <Button
                 key={category.id}
@@ -51,7 +59,9 @@ export const OnlineCourses = async () => {
           </div>
 
           {/* Mobile Category Select */}
-          <div className="md:hidden">
+          <div className={clsx("md:hidden", {
+            "hidden": !showMore,
+          })}>
             <Select>
               <SelectTrigger className="w-[140px]">
                 <SelectValue placeholder="Category" />
@@ -70,7 +80,9 @@ export const OnlineCourses = async () => {
           {list}
         </div>
         {/* <Carousel list={list} title="home-new-english-courses-list" col={4} grid={true} /> */}
-        <div className="flex justify-center pt-8">
+        <div className={clsx("flex justify-center pt-8", {
+          "hidden": showMore,
+        })}>
           <Link href="/courses/search?category=online-courses">
             <Button variant="outline">View All Courses</Button>
           </Link>

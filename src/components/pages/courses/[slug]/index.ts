@@ -1,0 +1,8 @@
+export { Instructor } from "./instructor";
+export { Outcomes } from "./outcomes";
+export { Syllabus } from "./syllabus";
+export { Indetails } from "./indetails";
+export { Necessaries } from "./necessaries";
+export { Payments } from "./payments";
+export { Faq } from "./faq";
+export { Inquiry } from "./inquiry";

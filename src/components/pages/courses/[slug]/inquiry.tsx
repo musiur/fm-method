@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Phone } from 'lucide-react'
 
-const CourseDetailsInquiry = () => {
+export const Inquiry = () => {
     return (
         <Link 
             href="tel:16910" 
@@ -12,6 +12,4 @@ const CourseDetailsInquiry = () => {
         </Link>
     )
 }
-
-export default CourseDetailsInquiry;
 

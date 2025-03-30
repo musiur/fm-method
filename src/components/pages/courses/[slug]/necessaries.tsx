@@ -1,13 +1,9 @@
-const CourseDetailsNecessaries = () => {
-    const necessaries = [
-        "ইন্টারনেট সংযোগ (ওয়াইফাই বা মোবাইল ইন্টারনেট)",
-        "স্মার্টফোন অথবা পিসি"
-    ];
+export const Necessaries = ({list}:{ list: Array<string> }) => {
 
     return (
         <div className="bg-white rounded-lg">
             <ul className="space-y-4">
-                {necessaries.map((necessary, index) => (
+                {list?.map((necessary: string, index: number) => (
                     <li key={index} className="flex items-start gap-3">
                         <span className="text-primary">✓</span>
                         <span>{necessary}</span>
@@ -17,6 +13,3 @@ const CourseDetailsNecessaries = () => {
         </div>
     );
 };
-
-export default CourseDetailsNecessaries;
-

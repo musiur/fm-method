@@ -8,7 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/pages/courses";
+import { Card } from "@/components/pages/search";
 import { TypeGetBooksByTags } from "./type-get-books-by-tags";
 import { TypeActionResponse } from "@/lib/types/action-response";
 import { GET_COURSE_BY_TAG } from "@/api/courses/get-courses-by-tag";

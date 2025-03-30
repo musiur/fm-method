@@ -1,6 +1,6 @@
 import { Carousel } from "@/components/molecules";
 import { TypeGetBooksByTags } from "./type-get-books-by-tags";
-import { Card } from "@/components/pages/courses/search/card";
+import { Card } from "@/components/pages/search";
 import { TypeActionResponse } from "@/lib/types/action-response";
 import { GET_COURSE_BY_TAG } from "@/api/courses/get-courses-by-tag";
 

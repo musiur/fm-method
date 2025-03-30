@@ -1,4 +1,4 @@
-import { Card } from "@/components/pages/courses"
+import { Card } from "@/components/pages/search"
 import { TypeActionResponse } from "@/lib/types/action-response";
 import { GET_COURSE_BY_TAG } from "@/api/courses/get-courses-by-tag";
 import { TypeGetBooksByTags } from "@/components/pages/home/type-get-books-by-tags";

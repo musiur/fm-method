@@ -1,8 +1,8 @@
-import { GET_PROFILE } from "@/api/profile/get-profile";
+import { actionGetProfile } from "@/actions/profile/get-profile";
 import ProfileCard from "./profile-card";
 
 export const ProfileWrapper = async () => {
-  const user = await GET_PROFILE();
+  const user = await actionGetProfile();
   return (
     <div>
       <ProfileCard

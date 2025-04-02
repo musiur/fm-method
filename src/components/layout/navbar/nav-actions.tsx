@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import Cookies from "js-cookie";
 import { useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { _LOGOUT } from "@/api/auth/_logout";
+import { actionLogout } from "@/actions/auth/_logout";
 import { LogOutIcon, SquareActivityIcon, UserIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
@@ -29,7 +29,7 @@ const NavActions = () => {
   }, [pathname]);
 
   const handleLogout = async () => {
-    await _LOGOUT();
+    await actionLogout();
   };
 
   return (

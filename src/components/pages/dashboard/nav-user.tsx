@@ -18,7 +18,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { _LOGOUT } from "@/api/auth/_logout";
+import { actionLogout } from "@/actions/auth/_logout";
 
 export function NavUser({
   user,
@@ -32,7 +32,7 @@ export function NavUser({
   const { isMobile } = useSidebar();
 
   const HandleLogout = async () => {
-    await _LOGOUT();
+    await actionLogout();
   };
 
   return (

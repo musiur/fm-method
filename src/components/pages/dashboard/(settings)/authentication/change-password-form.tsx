@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import InputX from "@/components/form-x/input-x";
-import { ChangePassword } from "@/api/auth/post-change-password";
+import { changePassword } from "@/actions/auth/post-change-password";
 
 const FormSchema = z
   .object({
@@ -32,7 +32,7 @@ export function ChangePasswordForm() {
   });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    const result = await ChangePassword(data);
+    const result = await changePassword(data);
 
     if (result.success) {
       toast.success(result.message);

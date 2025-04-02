@@ -4,11 +4,11 @@ import CONFIGS from "@/configs";
 import { tryCatch } from "@/lib/error-handlers/try-catch";
 import { TypeActionResponse } from "@/lib/types/action-response";
 
-export const GET_COURSE_DETAILS_BY_ID = async <Data>(
-  id: string
+export const actionGetCourseByTag = async <Data>(
+  tag: string
 ): Promise<TypeActionResponse<Data>> => {
   const { data, error } = await tryCatch(
-    fetch(`${CONFIGS.BACKEND_BASE_URL}/api/course/details/${id}`, {
+    fetch(`${CONFIGS.BACKEND_BASE_URL}/api/course/courses-by-tags?tags=${tag}`, {
       method: "GET",
       headers: {
         Accept: "application/json",

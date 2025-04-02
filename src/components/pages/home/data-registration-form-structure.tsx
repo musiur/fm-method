@@ -1,4 +1,4 @@
-import { AUTH_REGISTER } from "@/api/auth/post-register";
+import { actionRegister } from "@/actions/auth/post-register";
 import { FormX__TYPE_Structure } from "@/components/form-x/form-x";
 
 export const DataRegistrationFormStructure: FormX__TYPE_Structure = {
@@ -44,7 +44,7 @@ export const DataRegistrationFormStructure: FormX__TYPE_Structure = {
   submission: {
     toast: true,
     submitHandler: async (data) => {
-      const result = await AUTH_REGISTER(data);
+      const result = await actionRegister(data);
       if (result.success) {
         localStorage.setItem("registered_email", data.email);
         window.location.href = "/verify";

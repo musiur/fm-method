@@ -3,15 +3,15 @@
 import CONFIGS from "@/configs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { _LOGOUT } from "@/api/auth/_logout";
+import { actionLogout } from "@/actions/auth/_logout";
 import { tryCatch } from "@/lib/error-handlers/try-catch";
-import { AUTH_REFRESHED_TOKEN } from "@/api/auth/post-refreshed-token";
+import { actionRefreshedToken } from "@/actions/auth/post-refreshed-token";
 
-export async function GET_PROFILE() {
+export async function actionGetProfile() {
   const accessToken = (await cookies()).get("access_token")?.value;
 
   if (!accessToken) {
-    await _LOGOUT();
+    await actionLogout();
     redirect("/login");
   }
   const { data, error } = await tryCatch(
@@ -26,7 +26,7 @@ export async function GET_PROFILE() {
   );
 
   if (data?.status && data?.status === 401) {
-    await AUTH_REFRESHED_TOKEN("/dashboard/profile");
+    await actionRefreshedToken("/dashboard/profile");
   }
 
   if (error) {

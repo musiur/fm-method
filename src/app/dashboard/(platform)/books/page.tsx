@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { GET_BOOKS } from "@/api/books/get-books";
+import { actionGetBooks } from "@/actions/books/get-books";
 import { PlaceholderImageURL } from "@/lib/constants";
 import { TypeActionResponse } from "@/lib/types/action-response";
 
@@ -18,7 +18,7 @@ type Books = {
 };
 
 const BookList = async () => {
-  const booksData: TypeActionResponse<Books[]> = await GET_BOOKS();
+  const booksData: TypeActionResponse<Books[]> = await actionGetBooks();
 
   if (!booksData.success) {
     return <div>No book list found!</div>;

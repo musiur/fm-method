@@ -2,10 +2,11 @@ import { Carousel } from "@/components/molecules";
 import { TypeGetBooksByTags } from "./type-get-books-by-tags";
 import { Card } from "@/components/pages/search";
 import { TypeActionResponse } from "@/lib/types/action-response";
-import { GET_COURSE_BY_TAG } from "@/api/courses/get-courses-by-tag";
+import { actionGetCourseByTag } from "@/actions/courses/get-courses-by-tag";
 
 export const NewEnglishCourses = async () => {
-  const courseData: TypeActionResponse<TypeGetBooksByTags[]> = await GET_COURSE_BY_TAG("featured");
+  const courseData: TypeActionResponse<TypeGetBooksByTags[]> =
+    await actionGetCourseByTag("featured");
 
   if (!courseData?.success) {
     return <div>No course found!</div>;

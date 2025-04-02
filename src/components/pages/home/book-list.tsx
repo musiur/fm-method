@@ -1,4 +1,4 @@
-import { GET_BOOKS } from "@/api/books/get-books";
+import { actionGetBooks } from "@/actions/books/get-books";
 import { TypeActionResponse } from "@/lib/types/action-response";
 import Image from "next/image";
 import { PlaceholderImageURL } from "@/lib/constants";
@@ -18,7 +18,7 @@ type Books = {
 };
 
 export const BookList = async () => {
-  const booksData: TypeActionResponse<Books[]> = await GET_BOOKS();
+  const booksData: TypeActionResponse<Books[]> = await actionGetBooks();
 
   if (!booksData.success) {
     return <div>No book list found!</div>;

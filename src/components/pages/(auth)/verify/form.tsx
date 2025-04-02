@@ -15,7 +15,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { toast } from "sonner";
-import { VERIFY_ACCOUNT } from "@/api/auth/post-verify-account";
+import { actionVerifyAccount } from "@/actions/auth/post-verify-account";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
@@ -55,7 +55,7 @@ const VerificationForm = () => {
       return;
     }
 
-    const result = await VERIFY_ACCOUNT({
+    const result = await actionVerifyAccount({
       email: persistedEmail,
       verification_code: data.code,
     });

@@ -2,21 +2,29 @@
 
 import CONFIGS from "@/configs";
 import { tryCatch } from "@/lib/error-handlers/try-catch";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-export const AUTH_REGISTER = async (payload: {
-  email: string;
-  password: string;
-  name: string;
-  password_confirmation: string;
-}) => {
+export const actionRefreshedToken = async (path: string) => {
+  const refreshToken = (await cookies()).get("refresh_token")?.value;
+
+  if (!refreshToken) {
+    return {
+      success: false,
+      message: "Bad request!",
+    };
+  }
+
   const { data, error } = await tryCatch(
-    fetch(`${CONFIGS.BACKEND_BASE_URL}/api/auth/register`, {
+    fetch(`${CONFIGS.BACKEND_BASE_URL}/api/auth/refresh`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        refresh_token: refreshToken,
+      }),
     })
   );
 
@@ -35,9 +43,12 @@ export const AUTH_REGISTER = async (payload: {
       ? Object.values(result?.errors)?.join(", ")
       : null;
 
-  return {
-    success: errors ? false : true,
-    message: errors ? errors : "User registered successfully",
-    ...result,
-  };
+  if (errors) {
+    return {
+      success: false,
+      message: errors || "Something went wrong",
+    };
+  }
+
+  redirect(path);
 };

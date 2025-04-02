@@ -4,54 +4,48 @@ import CONFIGS from "@/configs";
 import { tryCatch } from "@/lib/error-handlers/try-catch";
 import { cookies } from "next/headers";
 
-type ChangePasswordType = {
-  old_password: string;
-  new_password: string;
-  new_password_confirmation: string;
-};
-
-export const ChangePassword = async (payload: ChangePasswordType) => {
-  const token = (await cookies()).get("access_token")?.value;
-
+export const actionLogin = async (payload: { email: string; password: string }) => {
   const { data, error } = await tryCatch(
-    fetch(`${CONFIGS.BACKEND_BASE_URL}/api/profile/change-password`, {
+    fetch(`${CONFIGS.BACKEND_BASE_URL}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(payload),
     })
   );
 
-  if (data?.status && data?.status !== 200) {
-    return {
-      success: false,
-      message: "Something went wrong",
-    };
-  }
-
   if (error) {
     return {
       success: false,
-      message: "Something went wrong",
-      error: error,
+      message: "Failed to login",
     };
   }
-
   const result = await data.json();
+
+  const refreshToken = result?.refresh_token;
+  const accessToken = result?.access_token;
+
+  if (refreshToken && accessToken) {
+    (await cookies()).set("refresh_token", refreshToken);
+    (await cookies()).set("access_token", accessToken);
+  } else {
+    return {
+      success: false,
+      message: "Unauthorized request",
+      ...result,
+    };
+  }
 
   const errors =
     result?.errors && Object.keys(result?.errors)?.length
       ? Object.values(result?.errors || result?.error)?.join(", ")
       : null;
 
-  const returnData = {
+  return {
     success: errors ? false : true,
-    message: errors ? errors : "Password changed successfully",
+    message: errors ? errors : "Login successful",
     ...result,
   };
-
-  return returnData;
 };

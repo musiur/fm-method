@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/pages/search";
 import { TypeGetBooksByTags } from "./type-get-books-by-tags";
 import { TypeActionResponse } from "@/lib/types/action-response";
-import { GET_COURSE_BY_TAG } from "@/api/courses/get-courses-by-tag";
+import { actionGetCourseByTag } from "@/actions/courses/get-courses-by-tag";
 
 const categories = [
   { id: "all", label: "See All" },
@@ -22,7 +22,8 @@ const categories = [
 ];
 
 export const OnlineCourses = async () => {
-  const courseData: TypeActionResponse<TypeGetBooksByTags[]> = await GET_COURSE_BY_TAG("featured");
+  const courseData: TypeActionResponse<TypeGetBooksByTags[]> =
+    await actionGetCourseByTag("featured");
 
   if (!courseData?.success) {
     return <div>No course found!</div>;

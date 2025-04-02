@@ -3,7 +3,10 @@
 import CONFIGS from "@/configs";
 import { tryCatch } from "@/lib/error-handlers/try-catch";
 
-export const VERIFY_ACCOUNT = async (payload: { email: string; verification_code: string }) => {
+export const actionVerifyAccount = async (payload: {
+  email: string;
+  verification_code: string;
+}) => {
   const { data, error } = await tryCatch(
     fetch(`${CONFIGS.BACKEND_BASE_URL}/api/auth/verify`, {
       method: "POST",

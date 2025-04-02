@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { NewEnglishCourses } from "@/components/pages/home";
-import { GET_COURSE_DETAILS_BY_ID } from "@/api/courses/get-course-details-by-id";
+import { actionGetCourseDetailsByID } from "@/actions/courses/get-course-details-by-id";
 import { TypeActionResponse } from "@/lib/types/action-response";
 import { DetailsHero, DetailsTabs, TypeDetails } from "@/components/pages/courses";
 
@@ -11,7 +11,7 @@ const CourseDetailsPage = async ({ params }: { params: Promise<{ slug: string }>
     return <div>No course found!</div>;
   }
 
-  const result: TypeActionResponse<TypeDetails> = await GET_COURSE_DETAILS_BY_ID(slug);
+  const result: TypeActionResponse<TypeDetails> = await actionGetCourseDetailsByID(slug);
 
   if (!result?.success) {
     return <div>No course found!</div>;

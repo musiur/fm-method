@@ -6,7 +6,7 @@ import { Carousel } from "@/components/molecules";
 import Slide from "./slide";
 import SlideImage from "./caute.png";
 import Link from "next/link";
-import { AUTH_LOGIN } from "@/api/auth/post-login";
+import { actionLogin } from "@/actions/auth/post-login";
 import { toast } from "sonner";
 
 const Slides = [
@@ -50,7 +50,7 @@ const FormXStructure: FormX__TYPE_Structure = {
   submission: {
     toast: true,
     submitHandler: async (data) => {
-      const result = await AUTH_LOGIN(data);
+      const result = await actionLogin(data);
       if (result.success) {
         toast.success(result.message);
         window.location.href = "/dashboard";

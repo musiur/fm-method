@@ -33,7 +33,7 @@ export function ChangePasswordForm() {
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     const result = await ChangePassword(data);
-    
+
     if (result.success) {
       toast.success(result.message);
       form.reset();
@@ -44,21 +44,12 @@ export function ChangePasswordForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="max-w-md space-y-6"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-md space-y-6">
         <InputX name="old_password" type="password" label="Old Password" />
         <InputX name="new_password" type="password" label="New Password" />
-        <InputX
-          name="new_password_confirmation"
-          type="password"
-          label="Confirm Password"
-        />
+        <InputX name="new_password_confirmation" type="password" label="Confirm Password" />
         <Button type="submit" disabled={form.formState.isSubmitting}>
-          {form.formState.isSubmitting
-            ? "Changing Password..."
-            : "Change Password"}
+          {form.formState.isSubmitting ? "Changing Password..." : "Change Password"}
         </Button>
       </form>
     </Form>

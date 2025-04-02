@@ -1,6 +1,6 @@
-import { ChevronDown } from "lucide-react"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { ChevronDown } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 export function FilterContent() {
   return (
@@ -165,6 +165,5 @@ export function FilterContent() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

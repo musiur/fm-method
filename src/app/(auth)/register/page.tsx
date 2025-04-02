@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { PageHeader } from "@/components/molecules";
 import RegisterForm from "@/components/pages/(auth)/register/form";
 
-
 const RegisterPage = () => {
   return (
     <Fragment>

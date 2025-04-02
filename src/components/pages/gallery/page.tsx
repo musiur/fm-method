@@ -19,8 +19,7 @@ export const Page = () => {
       selectedTab === "all" ||
       (selectedTab === "images" && item.type === "image") ||
       (selectedTab === "videos" && item.type === "video");
-    const matchesCategory =
-      selectedCategory === "All" || item.category === selectedCategory;
+    const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
 
     return matchesType && matchesCategory;
   });
@@ -35,9 +34,7 @@ export const Page = () => {
   const goToPrevious = () => {
     if (!currentMedia) return;
 
-    const currentIndex = filteredMedia.findIndex(
-      (item) => item.id === currentMedia.id
-    );
+    const currentIndex = filteredMedia.findIndex((item) => item.id === currentMedia.id);
     if (currentIndex > 0) {
       setCurrentMedia(filteredMedia[currentIndex - 1]);
     } else {
@@ -50,9 +47,7 @@ export const Page = () => {
   const goToNext = () => {
     if (!currentMedia) return;
 
-    const currentIndex = filteredMedia.findIndex(
-      (item) => item.id === currentMedia.id
-    );
+    const currentIndex = filteredMedia.findIndex((item) => item.id === currentMedia.id);
     if (currentIndex < filteredMedia.length - 1) {
       setCurrentMedia(filteredMedia[currentIndex + 1]);
     } else {
@@ -74,8 +69,7 @@ export const Page = () => {
         {/* Results count */}
         <div className="mb-4">
           <p className="text-sm text-muted-foreground">
-            Showing {filteredMedia.length} of {DataMediaItems.length} media
-            items
+            Showing {filteredMedia.length} of {DataMediaItems.length} media items
           </p>
         </div>
 

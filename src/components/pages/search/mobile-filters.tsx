@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Filter } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Filter } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -12,11 +12,11 @@ import {
   DrawerTitle,
   DrawerTrigger,
   DrawerFooter,
-} from "@/components/ui/drawer"
-import { FilterContent } from "./filter-content"
+} from "@/components/ui/drawer";
+import { FilterContent } from "./filter-content";
 
 export default function MobileFilters() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="md:hidden">
@@ -30,7 +30,9 @@ export default function MobileFilters() {
         <DrawerContent className="h-[85vh]">
           <DrawerHeader>
             <DrawerTitle>Filter Courses</DrawerTitle>
-            <DrawerDescription>Narrow down courses to find exactly what you&apos;re looking for</DrawerDescription>
+            <DrawerDescription>
+              Narrow down courses to find exactly what you&apos;re looking for
+            </DrawerDescription>
           </DrawerHeader>
           <div className="px-4 overflow-y-auto pb-0">
             <FilterContent />
@@ -44,6 +46,5 @@ export default function MobileFilters() {
         </DrawerContent>
       </Drawer>
     </div>
-  )
+  );
 }
-

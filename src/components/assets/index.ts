@@ -8,14 +8,14 @@ import StudentTestimonial1 from "./student-1.png";
 import StudentTestimonial2 from "./student-2.png";
 import StudentTestimonial3 from "./student-3.png";
 
-export { 
-    BasicCourse, 
-    IntermediateCourse, 
-    AdvancedCourse, 
-    IELTSCourse, 
-    FMSirTwo, 
-    FM_SIR_IMAGE, 
-    StudentTestimonial1, 
-    StudentTestimonial2, 
-    StudentTestimonial3 
+export {
+  BasicCourse,
+  IntermediateCourse,
+  AdvancedCourse,
+  IELTSCourse,
+  FMSirTwo,
+  FM_SIR_IMAGE,
+  StudentTestimonial1,
+  StudentTestimonial2,
+  StudentTestimonial3,
 };

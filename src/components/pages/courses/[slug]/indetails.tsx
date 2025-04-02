@@ -3,8 +3,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-import { TypeDetailsFAQ } from "./type-details"
+} from "@/components/ui/accordion";
+import { TypeDetailsFAQ } from "./type-details";
 
 export const Indetails = (props: TypeDetailsFAQ[]) => {
   return (
@@ -13,10 +13,10 @@ export const Indetails = (props: TypeDetailsFAQ[]) => {
         <AccordionItem key={item.id} value={`${item.id}`}>
           <AccordionTrigger>{item.question}</AccordionTrigger>
           <AccordionContent>
-          <p className="text-sm text-muted-foreground">{item.answer}</p>
+            <p className="text-sm text-muted-foreground">{item.answer}</p>
           </AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>
-  )
-}
+  );
+};

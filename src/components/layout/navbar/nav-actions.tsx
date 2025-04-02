@@ -6,11 +6,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { _LOGOUT } from "@/api/auth/_logout";
 import { LogOutIcon, SquareActivityIcon, UserIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -51,16 +47,10 @@ const NavActions = () => {
           </PopoverTrigger>
           <PopoverContent align="end" className="w-56">
             <div className="flex flex-col gap-2">
-              <Link
-                href="/dashboard"
-                className="inline-flex items-center gap-2"
-              >
+              <Link href="/dashboard" className="inline-flex items-center gap-2">
                 <SquareActivityIcon size={16} /> ড্যাশবোর্ড
               </Link>
-              <Link
-                href="/dashboard/profile"
-                className="inline-flex items-center gap-2"
-              >
+              <Link href="/dashboard/profile" className="inline-flex items-center gap-2">
                 <UserIcon size={16} /> প্রোফাইল
               </Link>
               <Separator />

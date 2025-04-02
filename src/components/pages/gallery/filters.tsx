@@ -9,15 +9,7 @@ import {
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Available filters
-const categories = [
-  "All",
-  "Campus",
-  "Courses",
-  "Events",
-  "Facilities",
-  "Faculty",
-  "Students",
-];
+const categories = ["All", "Campus", "Courses", "Events", "Facilities", "Faculty", "Students"];
 
 interface GalleryFiltersProps {
   selectedTab: string;

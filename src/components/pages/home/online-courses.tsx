@@ -38,15 +38,15 @@ export const OnlineCourses = async () => {
     <div className="section">
       <div className="container space-y-8">
         <div className="flex items-center justify-between gap-4">
-          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">
-            Online Courses
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">Online Courses</h2>
 
           {/* Desktop Category List */}
-          <div className={clsx("hidden items-center gap-6", {
-            "hidden": showMore,
-            "md:flex": !showMore
-          })}>
+          <div
+            className={clsx("hidden items-center gap-6", {
+              hidden: showMore,
+              "md:flex": !showMore,
+            })}
+          >
             {categories.map((category) => (
               <Button
                 key={category.id}
@@ -59,9 +59,11 @@ export const OnlineCourses = async () => {
           </div>
 
           {/* Mobile Category Select */}
-          <div className={clsx("md:hidden", {
-            "hidden": !showMore,
-          })}>
+          <div
+            className={clsx("md:hidden", {
+              hidden: !showMore,
+            })}
+          >
             <Select>
               <SelectTrigger className="w-[140px]">
                 <SelectValue placeholder="Category" />
@@ -80,9 +82,11 @@ export const OnlineCourses = async () => {
           {list}
         </div>
         {/* <Carousel list={list} title="home-new-english-courses-list" col={4} grid={true} /> */}
-        <div className={clsx("flex justify-center pt-8", {
-          "hidden": showMore,
-        })}>
+        <div
+          className={clsx("flex justify-center pt-8", {
+            hidden: showMore,
+          })}
+        >
           <Link href="/courses/search?category=online-courses">
             <Button variant="outline">View All Courses</Button>
           </Link>

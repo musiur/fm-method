@@ -32,17 +32,16 @@ export const Card = ({
             {course.title}
           </h3>
           <div className="flex items-center gap-1">
-            <span className="font-medium text-sm">
-              {course.engagement.average_rating}
-            </span>
+            <span className="font-medium text-sm">{course.engagement.average_rating}</span>
             <div className="flex items-center">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className={`h-3.5 w-3.5 ${i < Math.floor(course.engagement.average_rating)
+                  className={`h-3.5 w-3.5 ${
+                    i < Math.floor(course.engagement.average_rating)
                       ? "text-yellow-500 fill-yellow-500"
                       : "text-muted-foreground"
-                    }`}
+                  }`}
                 />
               ))}
             </div>
@@ -62,9 +61,7 @@ export const Card = ({
             <span>{Math.floor(course.syllabus.total_duration / 60)} hours</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-bold">
-              ৳{course.pricing.sell_price}
-            </span>
+            <span className="font-bold">৳{course.pricing.sell_price}</span>
             <span className="text-sm text-muted-foreground line-through">
               ৳{course.pricing.regular_price}
             </span>

@@ -4,7 +4,7 @@ import { Details } from "@/components/pages/events";
 
 const EventPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
-  
+
   return (
     <Fragment>
       <PageHeader title={slug} />

@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button"
-import { FilterContent } from "./filter-content"
+import { Button } from "@/components/ui/button";
+import { FilterContent } from "./filter-content";
 
 interface FilterSidebarProps {
-  className?: string
+  className?: string;
 }
 
 export default function FilterSidebar({ className }: FilterSidebarProps) {
@@ -16,6 +16,5 @@ export default function FilterSidebar({ className }: FilterSidebarProps) {
         </Button>
       </div>
     </aside>
-  )
+  );
 }
-

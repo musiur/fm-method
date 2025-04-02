@@ -7,5 +7,3 @@ export const ListContainer = () => {
     </div>
   );
 };
-
-

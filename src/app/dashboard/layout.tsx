@@ -1,12 +1,7 @@
-
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { NavHeader, NavSidebar } from "@/components/pages/dashboard";
 
-const DashboardLayout = ({
-  children,
-}: {
-  children: React.ReactNode;
-}): React.ReactNode => {
+const DashboardLayout = ({ children }: { children: React.ReactNode }): React.ReactNode => {
   return (
     <SidebarProvider>
       <NavSidebar />

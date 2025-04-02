@@ -12,12 +12,11 @@ import clsx from "clsx";
 const CheckboxX = ({
   name,
   label = "Check this box",
-}:
-  {
-    name: string;
-    label?: string;
-    description?: string
-  }) => {
+}: {
+  name: string;
+  label?: string;
+  description?: string;
+}) => {
   const form = useFormContext();
   return (
     <FormField

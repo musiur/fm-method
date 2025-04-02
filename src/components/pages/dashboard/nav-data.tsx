@@ -1,12 +1,4 @@
-import {
-  Book,
-  BookOpen,
-  NotebookPen,
-  PieChart,
-  Shield,
-  ShoppingCart,
-  User,
-} from "lucide-react";
+import { Book, BookOpen, NotebookPen, PieChart, Shield, ShoppingCart, User } from "lucide-react";
 
 export const data = {
   user: {

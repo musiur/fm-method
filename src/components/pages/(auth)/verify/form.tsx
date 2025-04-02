@@ -93,12 +93,12 @@ const VerificationForm = () => {
                       <InputOTPSlot index={0} />
                       <InputOTPSlot index={1} />
                     </InputOTPGroup>
-                    <InputOTPSeparator className="text-gray-300"/>
+                    <InputOTPSeparator className="text-gray-300" />
                     <InputOTPGroup>
                       <InputOTPSlot index={2} />
                       <InputOTPSlot index={3} />
                     </InputOTPGroup>
-                    <InputOTPSeparator className="text-gray-300"/>
+                    <InputOTPSeparator className="text-gray-300" />
                     <InputOTPGroup>
                       <InputOTPSlot index={4} />
                       <InputOTPSlot index={5} />
@@ -107,13 +107,8 @@ const VerificationForm = () => {
                 </FormItem>
               )}
             />
-            <Button
-              type="submit"
-              disabled={form.formState.isSubmitting}
-            >
-              {form.formState.isSubmitting
-                ? "ভ্যারিফাই করা হচ্ছে..."
-                : "ভ্যারিফাই করুন"}
+            <Button type="submit" disabled={form.formState.isSubmitting}>
+              {form.formState.isSubmitting ? "ভ্যারিফাই করা হচ্ছে..." : "ভ্যারিফাই করুন"}
             </Button>
           </form>
         </Form>

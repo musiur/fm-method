@@ -24,4 +24,4 @@ export const Result = () => {
       </div>
     </div>
   );
-}
+};

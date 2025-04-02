@@ -1,5 +1,5 @@
 import { DataList } from "./data-list";
-import {Card} from "./card";
+import { Card } from "./card";
 
 const EventList = () => {
   return (

@@ -9,12 +9,7 @@ interface ProfileCardProps {
   avatarUrl: string;
 }
 
-export default function ProfileCard({
-  name,
-  email,
-  phone,
-  avatarUrl,
-}: ProfileCardProps) {
+export default function ProfileCard({ name, email, phone, avatarUrl }: ProfileCardProps) {
   return (
     <Card className="w-full max-w-md overflow-hidden rounded-lg border">
       <CardContent className="p-6">
@@ -27,9 +22,7 @@ export default function ProfileCard({
           </div>
 
           <div className="flex flex-col text-center sm:text-left">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-              {name}
-            </h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{name}</h2>
 
             <div className="mt-4 space-y-2">
               <div className="flex items-center justify-center sm:justify-start gap-2 text-gray-600 dark:text-gray-300">

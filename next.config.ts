@@ -7,16 +7,16 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: 'exwj7ki8kn.ufs.sh',
+        hostname: "exwj7ki8kn.ufs.sh",
       },
       {
-        hostname: 'so90190s4w.ufs.sh',
+        hostname: "so90190s4w.ufs.sh",
       },
       {
-        hostname: 'github.com',
+        hostname: "github.com",
       },
       {
-        hostname: 'lms.fmmethod.online',
+        hostname: "lms.fmmethod.online",
       },
     ],
   },

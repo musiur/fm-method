@@ -3,4 +3,3 @@ const CoursePlaylistPage = () => {
 };
 
 export default CoursePlaylistPage;
-

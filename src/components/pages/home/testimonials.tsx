@@ -1,9 +1,5 @@
 import { Carousel } from "@/components/molecules";
-import {
-  StudentTestimonial1,
-  StudentTestimonial2,
-  StudentTestimonial3,
-} from "@/components/assets"
+import { StudentTestimonial1, StudentTestimonial2, StudentTestimonial3 } from "@/components/assets";
 import Image from "next/image";
 
 const getCourses = async () => {

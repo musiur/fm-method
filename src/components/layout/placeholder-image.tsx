@@ -28,21 +28,9 @@ const PlaceholderImage = (props: SVGProps<SVGSVGElement>) => {
           d="M0-1.209h553.581"
           transform="scale(1 -1) rotate(45 1163.11 91.165)"
         />
-        <path
-          stroke="url(#b)"
-          strokeWidth="2.418"
-          d="M404.846 598.671h391.726"
-        />
-        <path
-          stroke="url(#c)"
-          strokeWidth="2.418"
-          d="M599.5 795.742V404.017"
-        />
-        <path
-          stroke="url(#d)"
-          strokeWidth="2.418"
-          d="m795.717 796.597-391.441-391.44"
-        />
+        <path stroke="url(#b)" strokeWidth="2.418" d="M404.846 598.671h391.726" />
+        <path stroke="url(#c)" strokeWidth="2.418" d="M599.5 795.742V404.017" />
+        <path stroke="url(#d)" strokeWidth="2.418" d="m795.717 796.597-391.441-391.44" />
         <path
           fill="#fff"
           d="M600.709 656.704c-31.384 0-56.825-25.441-56.825-56.824 0-31.384 25.441-56.825 56.825-56.825 31.383 0 56.824 25.441 56.824 56.825 0 31.383-25.441 56.824-56.824 56.824Z"

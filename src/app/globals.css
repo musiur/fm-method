@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -109,9 +109,6 @@
   font-weight: 600;
   line-height: clamp(2rem, 3vw, 3rem);
 }
-
-
-
 
 /* font montserrat */
 .montserrat-alternates-thin {
@@ -370,7 +367,9 @@
 .mega-menu-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 200ms, transform 200ms;
+  transition:
+    opacity 200ms,
+    transform 200ms;
 }
 
 .mega-menu-exit {
@@ -380,9 +379,10 @@
 .mega-menu-exit-active {
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 200ms, transform 200ms;
+  transition:
+    opacity 200ms,
+    transform 200ms;
 }
-
 
 .scrollbar-hide {
   scrollbar-width: none;
@@ -391,8 +391,6 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-
-
 
 @layer base {
   * {

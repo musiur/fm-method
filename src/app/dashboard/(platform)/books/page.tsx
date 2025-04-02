@@ -35,26 +35,21 @@ const BookList = async () => {
       />
       <div className="space-y-2">
         <h3 className="text-lg font-semibold">
-          {book.title}{" "}
-          <span className="h-6 px-2 rounded-md text-xs bg-gray-200">
-            {book.type}
-          </span>
+          {book.title} <span className="h-6 px-2 rounded-md text-xs bg-gray-200">{book.type}</span>
         </h3>
         <p className="text-sm">{book.description}</p>
       </div>
-      <Button variant="outline" className="w-full">Download now</Button>
+      <Button variant="outline" className="w-full">
+        Download now
+      </Button>
     </div>
   ));
 
   return (
     <div className="py-8">
       <div className="container space-y-8">
-        <h2 className="text-lg md:text-xl font-semibold leading-tight">
-          Book list
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {list}
-        </div>
+        <h2 className="text-lg md:text-xl font-semibold leading-tight">Book list</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">{list}</div>
       </div>
     </div>
   );

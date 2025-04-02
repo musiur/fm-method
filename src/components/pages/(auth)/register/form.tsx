@@ -26,9 +26,7 @@ const RegisterForm = () => {
       <div className="max-w-[500px] w-full space-y-8">
         <div>
           <h3 className="text-2xl font-bold">রেজিস্ট্রেশন করুন</h3>
-          <p className="text-sm text-gray-500">
-            ফর্মটি পূরণ করুন রেজিস্ট্রেশন করতে
-          </p>
+          <p className="text-sm text-gray-500">ফর্মটি পূরণ করুন রেজিস্ট্রেশন করতে</p>
         </div>
         <FormX structure={DataRegistrationFormStructure} />
         <hr />

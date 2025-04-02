@@ -20,13 +20,9 @@ export const NewEnglishCourses = async () => {
       <div className="container space-y-8">
         <div className="space-y-4 flex flex-col items-center justify-center">
           <p>চাকরি - টার্গেট যেটাই হোক, সলিউশন এখানেই!</p>
-          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">
-            NEW ENGLISH COURSES
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">NEW ENGLISH COURSES</h2>
         </div>
-        {
-          list ? <Carousel list={list} title="home-new-english-courses-list" col={4} /> : null
-        }
+        {list ? <Carousel list={list} title="home-new-english-courses-list" col={4} /> : null}
       </div>
     </div>
   );

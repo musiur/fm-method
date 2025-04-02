@@ -3,8 +3,8 @@ export type TypeMediaItem = {
   type: "image" | "video";
   title: string;
   src: string;
-    category: string;
-    thumbnail?: string;
-    duration?: string;
+  category: string;
+  thumbnail?: string;
+  duration?: string;
   date: string;
-}
+};

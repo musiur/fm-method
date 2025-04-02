@@ -50,10 +50,7 @@ const Navbar = () => {
         <AssetsBrandLogo className="w-20" />
 
         {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
+        <button className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           <Menu className={clsx("w-6 h-6", isMobileMenuOpen && "hidden")} />
           <X className={clsx("w-6 h-6", !isMobileMenuOpen && "hidden")} />
         </button>
@@ -62,9 +59,7 @@ const Navbar = () => {
         <div
           className={clsx(
             "items-center gap-8",
-            isMobileMenuOpen
-              ? "absolute top-full left-0 right-0 bg-white p-4"
-              : "hidden",
+            isMobileMenuOpen ? "absolute top-full left-0 right-0 bg-white p-4" : "hidden",
             "lg:flex lg:relative lg:bg-transparent lg:p-0"
           )}
         >
@@ -74,32 +69,25 @@ const Navbar = () => {
               onMouseEnter={() => setIsCoursesOpen(true)}
               onMouseLeave={() => setIsCoursesOpen(false)}
             >
-              <span className="hover:text-purple-600 cursor-pointer">
-                কোর্স ▾
-              </span>
+              <span className="hover:text-purple-600 cursor-pointer">কোর্স ▾</span>
 
               {/* Mega Menu */}
               <div
-                className={clsx(
-                  "fixed left-0 w-full overflow-y-auto pt-[24px]",
-                  {
-                    "opacity-100": isCoursesOpen,
-                    "opacity-0": !isCoursesOpen,
-                    "pointer-events-auto": isCoursesOpen,
-                    "pointer-events-none": !isCoursesOpen,
-                    "z-50": isCoursesOpen,
-                    "z-0": !isCoursesOpen,
-                    "max-h-[60vh] lg:max-h-[80vh]": isCoursesOpen,
-                  }
-                )}
+                className={clsx("fixed left-0 w-full overflow-y-auto pt-[24px]", {
+                  "opacity-100": isCoursesOpen,
+                  "opacity-0": !isCoursesOpen,
+                  "pointer-events-auto": isCoursesOpen,
+                  "pointer-events-none": !isCoursesOpen,
+                  "z-50": isCoursesOpen,
+                  "z-0": !isCoursesOpen,
+                  "max-h-[60vh] lg:max-h-[80vh]": isCoursesOpen,
+                })}
                 onMouseEnter={() => setIsCoursesOpen(true)}
                 onMouseLeave={() => setIsCoursesOpen(false)}
               >
                 <div className="bg-white">
                   <div className="container py-8">
-                    <h2 className="text-2xl font-bold mb-6">
-                      আমাদের কোর্সসমূহ
-                    </h2>
+                    <h2 className="text-2xl font-bold mb-6">আমাদের কোর্সসমূহ</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                       {courseData.map((course, index) => (
                         <div key={index} className="group cursor-pointer">

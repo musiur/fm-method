@@ -1,13 +1,9 @@
-"use client"
+"use client";
 
 import { useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { TypeMediaItem } from "./type-media-item";
 import { formatDate } from "@/lib/utils";
 import { PlaceholderImageURL } from "@/lib/constants";
@@ -60,8 +56,7 @@ export const Lightbox = ({
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white">
             <h2 className="text-xl font-medium">{currentMedia.title}</h2>
             <p className="text-sm opacity-80">
-              {currentMedia.category} •{" "}
-              {currentMedia.date && formatDate(currentMedia.date)}
+              {currentMedia.category} • {currentMedia.date && formatDate(currentMedia.date)}
             </p>
           </div>
 

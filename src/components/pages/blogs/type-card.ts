@@ -10,4 +10,4 @@ export type TypeCard = {
   comments?: number;
   imageUrl: string;
   slug: string;
-}
+};

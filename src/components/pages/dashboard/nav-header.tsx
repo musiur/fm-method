@@ -12,9 +12,7 @@ export const NavHeader = () => {
       <div className="flex flex-wrap items-center gap-2 px-4">
         <SidebarTrigger className="-ml-1" />
         {isMobile || !open ? (
-          <AssetsBrandLogo
-            className={clsx({ "w-16": !isMobile, "w-10": isMobile })}
-          />
+          <AssetsBrandLogo className={clsx({ "w-16": !isMobile, "w-10": isMobile })} />
         ) : null}
         <Separator orientation="vertical" className="mr-2 h-4" />
         {!isMobile ? <CustomBreadcrumb /> : null}

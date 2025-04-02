@@ -1,12 +1,8 @@
 import { StarRating } from "@/components/molecules";
 import { TypeDetailsHero } from "./type-details-hero";
 
-const OTP =
-    "20160313versASE323Hux3Mp2PtVpsNo8mLIzRqOs0KNyBJx6vvUQ9ry5Cmrts3X";
-  const PLAYBACK_INFO =
-    "eyJ2aWRlb0lkIjoiNWJmYTU4NTE4NDFlNGU1YjkzNDQwNTM5MmNiYTMyODMifQ==";
-
-
+const OTP = "20160313versASE323Hux3Mp2PtVpsNo8mLIzRqOs0KNyBJx6vvUQ9ry5Cmrts3X";
+const PLAYBACK_INFO = "eyJ2aWRlb0lkIjoiNWJmYTU4NTE4NDFlNGU1YjkzNDQwNTM5MmNiYTMyODMifQ==";
 
 export const DetailsHero = ({
   title,

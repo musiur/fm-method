@@ -21,7 +21,6 @@ export const Card = ({
   slug,
   shortDescription,
 }: TypeCard) => {
-  
   return (
     <div className="max-w-3xl border border-gray-200 rounded-lg overflow-hidden shadow-sm">
       <div className="relative h-[200px] md:h-[320px]">

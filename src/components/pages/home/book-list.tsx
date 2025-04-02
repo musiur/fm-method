@@ -34,7 +34,9 @@ export const BookList = async () => {
         className="w-full h-auto"
       />
       <div className="space-y-2">
-        <h3 className="text-lg font-semibold">{book.title} <span className="h-6 px-2 rounded-md text-xs bg-gray-200">{book.type}</span></h3>
+        <h3 className="text-lg font-semibold">
+          {book.title} <span className="h-6 px-2 rounded-md text-xs bg-gray-200">{book.type}</span>
+        </h3>
         <p className="text-sm">{book.description}</p>
         <div className="flex items-center gap-2">
           <p className="text-sm line-through">৳{book.general_price}</p>

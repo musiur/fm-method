@@ -1,13 +1,8 @@
-import Image from 'next/image';
-import { 
-  BasicIcon, 
-  IntermediateIcon, 
-  IeltsIcon, 
-  AdvancedIcon 
-} from '.';
-import clsx from 'clsx';
-import { ReactElement } from 'react';
-import { ChevronRight } from 'lucide-react';
+import Image from "next/image";
+import { BasicIcon, IntermediateIcon, IeltsIcon, AdvancedIcon } from ".";
+import clsx from "clsx";
+import { ReactElement } from "react";
+import { ChevronRight } from "lucide-react";
 
 interface CourseCategory {
   id: number;
@@ -20,28 +15,28 @@ export const About = () => {
   const courseCategories: CourseCategory[] = [
     {
       id: 1,
-      title: 'Basic',
+      title: "Basic",
       icon: <BasicIcon />,
-      link: '/courses/basic'
+      link: "/courses/basic",
     },
     {
       id: 2,
-      title: 'Intermediate',
+      title: "Intermediate",
       icon: <IntermediateIcon />,
-      link: '/courses/intermediate'
+      link: "/courses/intermediate",
     },
     {
       id: 3,
-      title: 'IELTS',
+      title: "IELTS",
       icon: <IeltsIcon className="stroke-accent" />,
-      link: '/courses/ielts'
+      link: "/courses/ielts",
     },
     {
       id: 4,
-      title: 'Advance',
+      title: "Advance",
       icon: <AdvancedIcon />,
-      link: '/courses/advance'
-    }
+      link: "/courses/advance",
+    },
   ];
 
   return (
@@ -69,11 +64,11 @@ export const About = () => {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">আমাদের সম্পর্কে</h2>
             <p className="text-gray-600 mb-8">
-              &quot;একজন সিনিয়র প্রাকটিশনী হিসাবে আমি বিশেষভাবে FM Method-এর সিস্টেম
-              ডিজাইন বিষয়বস্তু এবং পদ্ধতি ক্লাস পরিচালনা করেছি এবং আমি আন্তরিক
-              ধন্যবাদ পরিবর্তে তাঁর ব্যবসায়ীদের দিকে আরও বেশি সেবাইট বা প্রতিষ্ঠানের
-              মাধ্যম-নামের পরিবেশে কাজ করতে সক্ষমতা করে। সিস্টেম ডিজাইনের দক্ষতা
-              অর্জনের জন্য আমি FM Method কোর্সটি সুপারিশ করব।&quot;
+              &quot;একজন সিনিয়র প্রাকটিশনী হিসাবে আমি বিশেষভাবে FM Method-এর সিস্টেম ডিজাইন
+              বিষয়বস্তু এবং পদ্ধতি ক্লাস পরিচালনা করেছি এবং আমি আন্তরিক ধন্যবাদ পরিবর্তে তাঁর
+              ব্যবসায়ীদের দিকে আরও বেশি সেবাইট বা প্রতিষ্ঠানের মাধ্যম-নামের পরিবেশে কাজ করতে
+              সক্ষমতা করে। সিস্টেম ডিজাইনের দক্ষতা অর্জনের জন্য আমি FM Method কোর্সটি সুপারিশ
+              করব।&quot;
             </p>
             <button className="bg-[#4338CA] text-white px-8 py-3 rounded-lg hover:bg-[#3730A3] transition-colors">
               আরো জানুন
@@ -86,22 +81,23 @@ export const About = () => {
                 <a
                   key={category.id}
                   href={category.link}
-                  className={
-                    clsx("border rounded-lg hover:shadow-lg transition-shadow group", {
-                      "border-accent/20 [&>*]:text-accent": category.id === 3,
-                    })
-                  }
+                  className={clsx("border rounded-lg hover:shadow-lg transition-shadow group", {
+                    "border-accent/20 [&>*]:text-accent": category.id === 3,
+                  })}
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="mb-4 w-32 flex items-start justify-center">
-                      {category.icon}
-                    </div>
+                    <div className="mb-4 w-32 flex items-start justify-center">{category.icon}</div>
                     <div className="pb-4 -mt-6">
                       <h4 className="text-xl font-semibold mb-2">{category.title}</h4>
-                      <span className={clsx("group-hover:translate-x-2 transition-transform inline-flex items-center gap-2", {
-                        "text-accent": category.id === 3,
-                        "text-primary": category.id !== 3,
-                      })}>
+                      <span
+                        className={clsx(
+                          "group-hover:translate-x-2 transition-transform inline-flex items-center gap-2",
+                          {
+                            "text-accent": category.id === 3,
+                            "text-primary": category.id !== 3,
+                          }
+                        )}
+                      >
                         সব দেখুন <ChevronRight className="w-4 h-4" />
                       </span>
                     </div>
@@ -111,7 +107,6 @@ export const About = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

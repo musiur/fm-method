@@ -1,19 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-"use client"
+"use client";
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
-import {
-  Form,
-} from "@/components/ui/form"
-import SubmitX from "./submit-x"
-import InputX, { InputX___Type_InputTypes } from "./input-x"
-import CheckboxX from "./checkbox-x"
-import React, { Fragment } from "react"
-import { cn } from "@/lib/utils"
-import { toast } from "sonner"
+import { Form } from "@/components/ui/form";
+import SubmitX from "./submit-x";
+import InputX, { InputX___Type_InputTypes } from "./input-x";
+import CheckboxX from "./checkbox-x";
+import React, { Fragment } from "react";
+import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 export type FormX__TYPE_Field = {
   id: number;
@@ -26,18 +24,19 @@ export type FormX__TYPE_Field = {
   defaultValue?: object | string | boolean | Date | undefined | null;
   multiple?: boolean;
   fields?: FormX__TYPE_Field[];
-}
+};
 export type FormX__TYPE_Structure = {
-  fields: FormX__TYPE_Field[],
+  fields: FormX__TYPE_Field[];
   className?: string;
   submission: {
     toast: boolean;
-    submitHandler: (data: any) => Promise<{ success: boolean, message: string, error?: string, data?: any }>;
+    submitHandler: (
+      data: any
+    ) => Promise<{ success: boolean; message: string; error?: string; data?: any }>;
     buttonText?: string;
     buttonClassName?: string;
-  },
-
-}
+  };
+};
 
 // should be called from the parent component
 export const FormXStructure_DEMO: FormX__TYPE_Structure = {
@@ -52,7 +51,7 @@ export const FormXStructure_DEMO: FormX__TYPE_Structure = {
       validation: z.string().min(2, {
         message: "Username must be at least 2 characters.",
       }),
-      defaultValue: "John Doe"
+      defaultValue: "John Doe",
     },
   ],
   submission: {
@@ -61,15 +60,19 @@ export const FormXStructure_DEMO: FormX__TYPE_Structure = {
       return Promise.resolve({
         success: true,
         message: "Form submitted successfully",
-        data: data
-      })
+        data: data,
+      });
     },
     buttonText: "Submit",
-    buttonClassName: "w-full"
-  }
-}
-export const FormX__SchemaBuilder = (fields: FormX__TYPE_Field[]): [z.ZodType<any, z.ZodTypeDef, any>, Record<string, any>, any] => {
-  const buildSchemaAndDefaults = (fields: FormX__TYPE_Field[]): [Record<string, any>, Record<string, any>] => {
+    buttonClassName: "w-full",
+  },
+};
+export const FormX__SchemaBuilder = (
+  fields: FormX__TYPE_Field[]
+): [z.ZodType<any, z.ZodTypeDef, any>, Record<string, any>, any] => {
+  const buildSchemaAndDefaults = (
+    fields: FormX__TYPE_Field[]
+  ): [Record<string, any>, Record<string, any>] => {
     const schemaObject: Record<string, any> = {};
     const defaultValues: Record<string, any> = {};
 
@@ -93,9 +96,15 @@ export const FormX__SchemaBuilder = (fields: FormX__TYPE_Field[]): [z.ZodType<an
   const schema = z.object(schemaObject);
 
   return [schema, defaultValues, schema];
-}
+};
 
-export function FormX({ structure = FormXStructure_DEMO, className = "" }: { structure?: FormX__TYPE_Structure, className?: string }) {
+export function FormX({
+  structure = FormXStructure_DEMO,
+  className = "",
+}: {
+  structure?: FormX__TYPE_Structure;
+  className?: string;
+}) {
   const [FormSchema, defaultValues] = FormX__SchemaBuilder(structure.fields);
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -118,10 +127,14 @@ export function FormX({ structure = FormXStructure_DEMO, className = "" }: { str
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className={cn(className, "w-full space-y-6")}>
         {renderFields(structure?.fields, form)}
-        <SubmitX pending={form.formState.isSubmitting} text={structure?.submission?.buttonText || "Submit"} className={cn(structure?.submission?.buttonClassName, "w-full")} />
+        <SubmitX
+          pending={form.formState.isSubmitting}
+          text={structure?.submission?.buttonText || "Submit"}
+          className={cn(structure?.submission?.buttonClassName, "w-full")}
+        />
       </form>
     </Form>
-  )
+  );
 }
 
 function renderFields(fields: FormX__TYPE_Field[], form: any, parentName?: string) {
@@ -139,27 +152,18 @@ function renderFields(fields: FormX__TYPE_Field[], form: any, parentName?: strin
               {renderFields(nestedFields, form, fullName)}
             </div>
           </div>
-        ) : (
-          ["text", "password", "textarea", "select", "date", "number"].includes(type) ? (
-            <InputX
-              name={fullName}
-              label={label}
-              placeholder={placeholder}
-              description={description}
-              type={type as InputX___Type_InputTypes}
-            />
-          ) : type === "checkbox" ? (
-            <CheckboxX
-              name={fullName}
-              label={label}
-              description={description}
-            />
-          ) : null
-        )}
+        ) : ["text", "password", "textarea", "select", "date", "number"].includes(type) ? (
+          <InputX
+            name={fullName}
+            label={label}
+            placeholder={placeholder}
+            description={description}
+            type={type as InputX___Type_InputTypes}
+          />
+        ) : type === "checkbox" ? (
+          <CheckboxX name={fullName} label={label} description={description} />
+        ) : null}
       </Fragment>
     );
   });
 }
-
-
-

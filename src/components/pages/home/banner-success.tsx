@@ -1,24 +1,24 @@
-import { ArrowUp, Briefcase, Users } from 'lucide-react';
+import { ArrowUp, Briefcase, Users } from "lucide-react";
 
 const statsData = [
   {
     icon: <ArrowUp className="w-6 h-6" />,
-    value: '১৫,৫৪৮',
-    label: 'মোট শিক্ষার্থী',
-    alt: 'Total'
+    value: "১৫,৫৪৮",
+    label: "মোট শিক্ষার্থী",
+    alt: "Total",
   },
   {
     icon: <Briefcase className="w-6 h-6" />,
-    value: '৯,৫৪৮+',
-    label: 'চাকরিপ্রাপ্ত শিক্ষার্থী',
-    alt: 'Admitted'
+    value: "৯,৫৪৮+",
+    label: "চাকরিপ্রাপ্ত শিক্ষার্থী",
+    alt: "Admitted",
   },
   {
     icon: <Users className="w-6 h-6" />,
-    value: '৩৪',
-    label: 'টপ ১০০-তে চাকরিপ্রাপ্ত শিক্ষার্থী',
-    alt: 'Top'
-  }
+    value: "৩৪",
+    label: "টপ ১০০-তে চাকরিপ্রাপ্ত শিক্ষার্থী",
+    alt: "Top",
+  },
 ];
 
 export const BannerSuccess = () => {
@@ -33,7 +33,10 @@ export const BannerSuccess = () => {
         <div className="bg-white rounded-[20px] md:rounded-[40px] py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {statsData.map((stat, index) => (
-              <div key={index} className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+              <div
+                key={index}
+                className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left"
+              >
                 <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center [&>svg]:w-6 [&>svg]:h-6 text-primary">
                   {stat.icon}
                 </div>

@@ -13,11 +13,7 @@ import { usePathname } from "next/navigation";
  * @param {React.ReactNode} children - The child components to be rendered inside the main element.
  * @returns {React.ReactNode} The RootWrapper component.
  */
-const RootWrapper = ({
-  children,
-}: {
-  children: React.ReactNode;
-}): React.ReactNode => {
+const RootWrapper = ({ children }: { children: React.ReactNode }): React.ReactNode => {
   const pathname = usePathname();
   const isDashboard = pathname.includes("/dashboard");
   return (

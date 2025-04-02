@@ -19,8 +19,7 @@ const I18NSwitch = () => {
               className="border h-9 w-9 flex items-center justify-center"
               style={{
                 opacity: match ? 1 : 0.5,
-                borderRadius:
-                  id === 1 ? "0.5rem 0 0 0.5rem" : "0 0.5rem 0.5rem 0",
+                borderRadius: id === 1 ? "0.5rem 0 0 0.5rem" : "0 0.5rem 0.5rem 0",
               }}
             >
               {label}

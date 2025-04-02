@@ -18,11 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { CalendarIcon, Eye, EyeOff } from "lucide-react";
@@ -137,22 +133,16 @@ const InputX = ({
           onClick={() => setShowPass(!showPass)}
         >
           <Eye
-            className={clsx(
-              "h-4 text-gray-400 dark:text-gray-500 transition-all duration-300",
-              {
-                "opacity-100 w-4": showPass,
-                "opacity-0 w-0": !showPass,
-              }
-            )}
+            className={clsx("h-4 text-gray-400 dark:text-gray-500 transition-all duration-300", {
+              "opacity-100 w-4": showPass,
+              "opacity-0 w-0": !showPass,
+            })}
           />
           <EyeOff
-            className={clsx(
-              "h-4 text-gray-400 dark:text-gray-500 transition-all duration-300",
-              {
-                "opacity-100 w-4": !showPass,
-                "opacity-0 w-0": showPass,
-              }
-            )}
+            className={clsx("h-4 text-gray-400 dark:text-gray-500 transition-all duration-300", {
+              "opacity-100 w-4": !showPass,
+              "opacity-0 w-0": showPass,
+            })}
           />
         </div>
       </div>
@@ -204,11 +194,7 @@ const InputX = ({
                         !field.value && "text-muted-foreground"
                       )}
                     >
-                      {field.value ? (
-                        format(field.value, "PPP")
-                      ) : (
-                        <span>Pick a date</span>
-                      )}
+                      {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                     </Button>
                   </FormControl>
@@ -221,9 +207,7 @@ const InputX = ({
                       onSelect={(value) => {
                         value && field.onChange(new Date(value));
                       }}
-                      disabled={(date: any) =>
-                        date < new Date() && date > new Date("1900-01-01")
-                      }
+                      disabled={(date: any) => date < new Date() && date > new Date("1900-01-01")}
                       initialFocus
                     />
                   </PopoverContent>
@@ -233,9 +217,7 @@ const InputX = ({
               inputFields[type](field)
             )}
           </FormControl>
-          {description ? (
-            <FormDescription>{description}</FormDescription>
-          ) : null}
+          {description ? <FormDescription>{description}</FormDescription> : null}
           <FormMessage />
         </FormItem>
       )}

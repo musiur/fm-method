@@ -31,7 +31,7 @@ const FormXStructure: FormX__TYPE_Structure = {
       validation: z.string().min(8, {
         message: "পাসওয়ার্ড লিখুন।",
       }),
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       id: 2,
@@ -42,7 +42,7 @@ const FormXStructure: FormX__TYPE_Structure = {
       validation: z.string().min(8, {
         message: "পাসওয়ার্ড লিখুন।",
       }),
-      defaultValue: ""
+      defaultValue: "",
     },
   ],
   submission: {
@@ -64,9 +64,7 @@ const ResetPasswordForm = () => {
       <div className="max-w-[500px] w-full space-y-8">
         <div>
           <h3 className="text-2xl font-bold">পাসওয়ার্ড পরিবর্তন করুন</h3>
-          <p className="text-sm text-gray-500">
-            ফর্মটি পূরণ করুন পাসওয়ার্ড পরিবর্তন করতে
-          </p>
+          <p className="text-sm text-gray-500">ফর্মটি পূরণ করুন পাসওয়ার্ড পরিবর্তন করতে</p>
         </div>
         <FormX structure={FormXStructure} />
         <hr />

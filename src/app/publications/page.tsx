@@ -3,5 +3,3 @@ const PublicationsPage = () => {
 };
 
 export default PublicationsPage;
-
-

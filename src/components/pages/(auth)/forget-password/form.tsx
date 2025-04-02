@@ -53,9 +53,7 @@ const ForgetPasswordForm = () => {
       <div className="max-w-[500px] w-full space-y-8">
         <div>
           <h3 className="text-2xl font-bold">পাসওয়ার্ড রিকভার করুন</h3>
-          <p className="text-sm text-gray-500">
-            ফর্মটি পূরণ করুন পাসওয়ার্ড রিকভার করতে
-          </p>
+          <p className="text-sm text-gray-500">ফর্মটি পূরণ করুন পাসওয়ার্ড রিকভার করতে</p>
         </div>
         <FormX structure={FormXStructure} />
         <hr />

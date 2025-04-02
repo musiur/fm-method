@@ -4,15 +4,7 @@ import { useSidebar } from "@/components/ui/sidebar";
 import clsx from "clsx";
 import { usePathname, useRouter } from "next/navigation";
 
-const NavLink = ({
-  name,
-  url,
-  icon,
-}: {
-  name: string;
-  url: string;
-  icon: React.ReactNode;
-}) => {
+const NavLink = ({ name, url, icon }: { name: string; url: string; icon: React.ReactNode }) => {
   const router = useRouter();
   const pathname = usePathname();
   const { toggleSidebar, isMobile } = useSidebar();
@@ -39,13 +31,10 @@ const NavLink = ({
       onClick={HandleOnClick}
     >
       <span
-        className={clsx(
-          "w-[4px] rounded-md h-6 transition ease-in-out duration-500",
-          {
-            "bg-transparent": !isActive,
-            "bg-primary": isActive,
-          }
-        )}
+        className={clsx("w-[4px] rounded-md h-6 transition ease-in-out duration-500", {
+          "bg-transparent": !isActive,
+          "bg-primary": isActive,
+        })}
       ></span>
       {icon}
       <span>{name}</span>

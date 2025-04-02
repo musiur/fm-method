@@ -14,8 +14,7 @@ export const Grid = ({ filteredMedia, openMedia }: GalleryGridProps) => {
     return (
       <div className="flex h-40 items-center justify-center rounded-lg border border-dashed">
         <p className="text-center text-muted-foreground">
-          No media items found matching your criteria. Try adjusting your
-          filters.
+          No media items found matching your criteria. Try adjusting your filters.
         </p>
       </div>
     );
@@ -31,11 +30,7 @@ export const Grid = ({ filteredMedia, openMedia }: GalleryGridProps) => {
         >
           <div className="aspect-square relative overflow-hidden">
             <Image
-              src={
-                item.type === "image"
-                  ? item.src
-                  : item.thumbnail || PlaceholderImageURL
-              }
+              src={item.type === "image" ? item.src : item.thumbnail || PlaceholderImageURL}
               alt={item.title}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"

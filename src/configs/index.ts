@@ -1,5 +1,6 @@
 const CONFIGS = {
   BACKEND_BASE_URL: process.env.BACKEND_BASE_URL,
+  VDOCIPHER_API_SECRET: process.env.VDOCIPHER_API_SECRET,
 };
 
 export default CONFIGS;

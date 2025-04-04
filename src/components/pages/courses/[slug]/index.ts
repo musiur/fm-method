@@ -6,3 +6,4 @@ export { Necessaries } from "./necessaries";
 export { Payments } from "./payments";
 export { Faq } from "./faq";
 export { Inquiry } from "./inquiry";
+export { CourseSummeryCard } from "./course-summery-card"

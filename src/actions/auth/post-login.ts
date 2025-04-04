@@ -43,9 +43,12 @@ export const actionLogin = async (payload: { email: string; password: string }) 
       ? Object.values(result?.errors || result?.error)?.join(", ")
       : null;
 
+  const fromPathname = (await cookies()).get("from_pathname")?.value;
+
   return {
     success: errors ? false : true,
     message: errors ? errors : "Login successful",
+    fromPathname,
     ...result,
   };
 };

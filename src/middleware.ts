@@ -7,7 +7,7 @@ export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Check if the user is authenticated
-  const privateRoutes = ["/dashboard"];
+  const privateRoutes = ["/dashboard", "/checkout"];
   const publicRoutes = [
     "/login",
     "/register",
@@ -21,6 +21,7 @@ export async function middleware(request: NextRequest) {
 
   if (privateRoutes.includes(pathname)) {
     if (!accessToken || !refreshToken) {
+      (await cookies()).set("from_pathname", request.nextUrl.href)
       return NextResponse.redirect(new URL("/login", request.url));
     } else {
       return NextResponse.next();

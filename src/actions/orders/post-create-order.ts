@@ -25,7 +25,7 @@ type TypeCreateOrderPayload = {
 
 export const actionPostCreateOrder = async (payload: TypeCreateOrderPayload) => {
 
-    const token = (await cookies()).get("token")?.value;
+    const token = (await cookies()).get("access_token")?.value;
 
     if (!token) {
         return {

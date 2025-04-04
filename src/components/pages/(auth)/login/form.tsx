@@ -53,7 +53,7 @@ const FormXStructure: FormX__TYPE_Structure = {
       const result = await actionLogin(data);
       if (result.success) {
         toast.success(result.message);
-        window.location.href = "/dashboard";
+        window.location.href = result?.fromPathname || "/dashboard";
       }
       return result;
     },

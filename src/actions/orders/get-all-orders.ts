@@ -3,20 +3,15 @@
 import CONFIGS from "@/configs";
 import { tryCatch } from "@/lib/error-handlers/try-catch";
 import { TypeActionResponse } from "@/lib/types/action-response";
-import { cookies } from "next/headers";
 
 export const actionGetCourseDetailsByID = async <Data>(
   id: string
 ): Promise<TypeActionResponse<Data>> => {
-
-  const token = (await cookies()).get("access_token")?.value || "";
-
   const { data, error } = await tryCatch(
-    fetch(`${CONFIGS.BACKEND_BASE_URL}/api/course/details/${id}`, {
+    fetch(`${CONFIGS.BACKEND_BASE_URL}/api/get-all-orders?page=1&limit=10&userid=10`, {
       method: "GET",
       headers: {
         Accept: "application/json",
-        Authorization: `Bearer ${token}`,
       },
     })
   );

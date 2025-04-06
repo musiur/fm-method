@@ -49,15 +49,18 @@ export type TypeDetailsRating = {
 
 export type TypeDetailsChapter = {
   id: number;
-  name: string;
+  title: string;
   lessons: Array<TypeDetailsChapterLesson>;
 };
 
 export type TypeDetailsChapterLesson = {
   id: number;
+  name: string;
   title: string;
   duration: number;
   description: string;
+  lesson_details: string;
+  video_id: string;
   video_title: string;
   video_url: string;
   audio: string;
@@ -65,6 +68,9 @@ export type TypeDetailsChapterLesson = {
   status: string;
   embed_code: string;
   progress_status: string;
+  otp: string,
+  playback_info: string,
+  course_id: number,
 };
 
 export type TypeDetailsCategory = {

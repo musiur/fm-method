@@ -19,14 +19,10 @@ export const DetailsHero = ({
           <div>{StarRating(Number(rating))}</div>
           <div dangerouslySetInnerHTML={{ __html: description }} />
         </div>
-        <div className="bg-transparent rounded-[20px] md:rounded-[32px] min-h-[400px] col-span-1 lg:col-span-2 overflow-hidden">
+        <div className="bg-transparent rounded-[20px] md:rounded-[32px] col-span-1 lg:col-span-2 overflow-hidden">
           <iframe
             src={`https://player.vdocipher.com/v2/?otp=${otp}&playbackInfo=${playbackInfo}`}
-            style={{
-              border: "0",
-              width: "100%",
-              height: "100%",
-            }}
+            className="aspect-video w-full h-full"
             allow="encrypted-media"
             allowFullScreen
           />

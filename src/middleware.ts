@@ -7,7 +7,7 @@ export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Check if the user is authenticated
-  const privateRoutes = ["/dashboard", "/checkout"];
+  const privateRoutes = ["/dashboard", "/checkout", "/courses/playlist"];
   const publicRoutes = [
     "/login",
     "/register",

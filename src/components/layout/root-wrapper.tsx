@@ -6,6 +6,7 @@ import Navbar from "./navbar/navbar";
 import Footer from "./footer/footer";
 import { Toaster } from "sonner";
 import { usePathname } from "next/navigation";
+import { ContextProvider } from "@/contexts";
 
 /**
  * RootWrapper is a component that wraps the entire application.
@@ -17,13 +18,13 @@ const RootWrapper = ({ children }: { children: React.ReactNode }): React.ReactNo
   const pathname = usePathname();
   const isDashboard = pathname.includes("/dashboard");
   return (
-    <Fragment>
+    <ContextProvider>
       {!isDashboard ? <UnderConstructionBanner /> : null}
       {!isDashboard ? <Navbar /> : null}
       <main>{children}</main>
       {!isDashboard ? <Footer /> : null}
       <Toaster />
-    </Fragment>
+    </ContextProvider>
   );
 };
 

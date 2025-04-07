@@ -1,10 +1,11 @@
 import CONFIGS from "@/configs";
 import { tryCatch } from "@/lib/error-handlers/try-catch";
-import { NextResponse, NextRequest } from "next/server"
+import { type NextRequest } from "next/server";
 
-export const GET = async (req: NextRequest, res: NextResponse) => {
+export const GET = async (req: NextRequest) => {
 
-    const videoId = req.nextUrl.searchParams.get("videoId");
+    const searchParams = req.nextUrl.searchParams;
+    const videoId = searchParams.get('videoId')
 
     const { data, error } = await tryCatch(
         fetch(`https://dev.vdocipher.com/api/videos/${videoId}/otp`, {
@@ -18,15 +19,15 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
         })
     );
 
-    if(error){
-        return NextResponse.json({ success: false, message: "Failed to get credentials" })
+    if (error) {
+        return Response.json({ success: false, message: "Failed to get credentials" })
     }
 
-    if(data?.status === 401){
-        return NextResponse.json({ success: false, message: "Unauthorized" })
+    if (!data) {
+        return Response.json({ success: false, message: "No data received" });
     }
 
     const result = await data?.json();
 
-    return NextResponse.json({ success: true, message: "Credentials got successfully!", ...result })
+    return Response.json({ success: true, message: "Credentials got successfully!", ...result });
 }

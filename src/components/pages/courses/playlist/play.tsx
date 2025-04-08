@@ -1,10 +1,9 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { usePlayerContext } from "@/contexts";
 import clsx from "clsx";
-import { PlayCircle, Sun } from "lucide-react";
 import { useTransition } from "react";
+import { usePlayerContext } from "@/contexts";
+import { PlayCircle, Sun } from "lucide-react";
 
 export const Play = ({ video_id }: { video_id: string }) => {
     if (!video_id) {

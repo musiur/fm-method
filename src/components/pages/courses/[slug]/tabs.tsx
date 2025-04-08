@@ -140,7 +140,8 @@ export const DetailsTabs = (props: TypeDetails) => {
       <CourseSummeryCard 
         courseId={props?.id.toString()}
         price={props.pricing.sell_price} 
-        title={props.title} 
+        title={props.title}
+        purchased={props.purchased || false}
       />
     </div>
   );

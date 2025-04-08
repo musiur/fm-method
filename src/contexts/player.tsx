@@ -18,7 +18,7 @@ type TypePlayerCompose = {
 const getVideoCredentials = async (video_id: string): Promise<TypeCredentials> => {
     const videoCredentials: TypeActionResponse<TypeCredentials> = await actionVideoCredentials(video_id)
 
-    if(!videoCredentials?.success || !videoCredentials?.data?.otp){
+    if (!videoCredentials?.success || !videoCredentials?.data?.otp) {
         return { otp: "", playbackInfo: "" }
     }
 
@@ -39,7 +39,7 @@ type PlayerContextType = {
 
 const PlayerContext = createContext<PlayerContextType>({
     playerCompose: defaultPlayerCompose,
-    setPlayerCompose: () => {},
+    setPlayerCompose: () => { },
 });
 
 export const usePlayerContext = () => {

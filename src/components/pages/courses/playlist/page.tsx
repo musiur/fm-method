@@ -1,11 +1,11 @@
 import { TypeActionResponse } from "@/lib/types/action-response";
 import { Player, Playlist } from ".";
-import { TypeDetails, TypeDetailsSyllabus } from "../[slug]/type-details";
+import { TypeDetails } from "../[slug]/type-details";
 import { actionGetCourseDetailsByID } from "@/actions/courses/get-course-details-by-id";
 import { actionVideoCredentials } from "@/actions/vdocipher/post-video-credentials";
 
 export const PlaylistPage = async ({ searchParams }: { searchParams: Promise<{ id: string }> }) => {
-    const { id } = await searchParams;
+    const { id} = await searchParams;
 
     if (!id) {
         return <div>No course found!</div>;
@@ -27,7 +27,7 @@ export const PlaylistPage = async ({ searchParams }: { searchParams: Promise<{ i
                 otp={videoCredentials?.data?.otp || ""}
                 playbackInfo={videoCredentials?.data?.playbackInfo || ""}
             />
-            {!result?.data?.syllabus ? null : <Playlist {...(result?.data?.syllabus as TypeDetailsSyllabus)} />}
+            {!result?.data?.syllabus ? null : <Playlist {...({ ...result?.data?.syllabus, courseTitle: result?.data?.title })} />}
         </div>
     </div>;
 };

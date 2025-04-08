@@ -48,11 +48,11 @@ export const Syllabus = (props: TypeDetailsSyllabus) => {
                           </p>
                         </div>
                       </div>
-                      <Link href={`/courses/playlist?id=${lesson.course_id}`} className={clsx("inline-block h-9 px-2 flex items-center justify-center gap-1 border rounded-md hover:bg-black/5 text-black/80", {
+                      {/* <Link href={`/courses/playlist?id=${lesson.course_id}`} className={clsx("inline-block h-9 px-2 flex items-center justify-center gap-1 border rounded-md hover:bg-black/5 text-black/80", {
                         "hidden": !lesson.otp
                       })}>
                         <PlayCircle className="w-4 h-4 text-black/80" /> Watch
-                      </Link>
+                      </Link> */}
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pl-12 bg-black/5 py-2 pr-2">

@@ -1,21 +1,23 @@
 import { Button } from "@/components/ui/button";
-import { 
-    BookOpen, 
-    Clock, 
-    FileStack, 
-    Users, 
-    Video 
+import {
+    BookOpen,
+    Clock,
+    FileStack,
+    Users,
+    Video
 } from "lucide-react";
 import Link from "next/link";
 
 export const CourseSummeryCard = ({
     price,
     title,
-    courseId
+    courseId,
+    purchased
 }: {
     price: string;
     title: string;
     courseId: string
+    purchased: boolean;
 }) => {
     const courseCheckoutLink = `/checkout?productId=${courseId}&productType=course`;
 
@@ -23,10 +25,10 @@ export const CourseSummeryCard = ({
         <div className="col-span-1 lg:col-span-2">
             <div className="bg-white rounded-[20px] p-4 md:p-8 shadow-lg hover:shadow-2xl border space-y-8">
                 <div>
-                    <h3 className="text-2xl font-semibold">BDT {price} </h3>
+                    <h3 className="text-2xl font-semibold">{purchased ? "You own this course" : `BDT ${price}`} </h3>
                     <p className="text-gray-500">{title}</p>
                 </div>
-                <Link href={courseCheckoutLink}>
+                <Link href={purchased ? `/courses/playlist?id=${courseId}` : courseCheckoutLink} className="inline-block w-full">
                     <Button className="w-full">কোর্স কন্টিনিউ করুন</Button>
                 </Link>
                 <div className="space-y-2">

@@ -1,4 +1,5 @@
 export type TypeDetails = {
+  purchased: boolean;
   id: number;
   title: string;
   thumbnail: string;

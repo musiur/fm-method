@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { HomeRegistrationForm } from "./registration-form";
 import Link from "next/link";
-import { FM_SIR_IMAGE } from "@/components/assets";
 import Image from "next/image";
 import clsx from "clsx";
 
@@ -13,7 +12,7 @@ export const Hero = ({ loggedIn = true }: { loggedIn?: boolean }) => {
           "lg:grid-cols-3 py-0 lg:py-10": !loggedIn,
         })}
       >
-        <div className="py-0 lg:section flex flex-col gap-8 my-auto">
+        <div className="py-12 lg:section flex flex-col gap-8 my-auto">
           <div className="flex flex-col gap-4 [&>*]:text-white">
             <p>বিশেষীকরণ</p>
             <h1 className="heading-one">ইংলিশ কোর্সে অনলাইন ব্যাচে ভর্তি চলছে!</h1>
@@ -26,13 +25,13 @@ export const Hero = ({ loggedIn = true }: { loggedIn?: boolean }) => {
             </Link>
           </div>
         </div>
-        <div className="mt-auto hidden lg:block">
+        <div className="my-auto hidden lg:block">
           <Image
-            src={FM_SIR_IMAGE}
+            src="https://exwj7ki8kn.ufs.sh/f/xXgziAMpCDIl9txQLgm1fcbdkaXvRD2z3moV4YAtrEFhWNQL"
             alt="FM Sir"
             width={500}
             height={500}
-            className="w-auto max-h-[60dvh] ml-auto py-8"
+            className="w-auto lg:max-h-[60dvh] ml-auto py-8"
           />
         </div>
         <div className="my-auto py-0 lg:section">{!loggedIn ? <HomeRegistrationForm /> : null}</div>

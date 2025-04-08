@@ -1,6 +1,5 @@
 "use client";
 
-import { Fragment } from "react";
 import UnderConstructionBanner from "./under-construction-banner";
 import Navbar from "./navbar/navbar";
 import Footer from "./footer/footer";
@@ -17,6 +16,7 @@ import { ContextProvider } from "@/contexts";
 const RootWrapper = ({ children }: { children: React.ReactNode }): React.ReactNode => {
   const pathname = usePathname();
   const isDashboard = pathname.includes("/dashboard");
+  
   return (
     <ContextProvider>
       {!isDashboard ? <UnderConstructionBanner /> : null}

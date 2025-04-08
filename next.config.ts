@@ -18,6 +18,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "lms.fmmethod.online",
       },
+      {
+        hostname: "exwj7ki8kn.ufs.sh",
+      },
     ],
   },
 };
